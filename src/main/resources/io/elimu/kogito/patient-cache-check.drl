@@ -1,0 +1,31 @@
+package io.elimu.kogito;
+
+import io.elimu.kogito.model.NamedDataObject;
+import io.elimu.kogito.util.CacheHelper;
+
+import java.util.Map;
+
+global Map inferences;
+
+rule "Check patient if cards already presented"
+ruleflow-group "patient-cache-check"
+salience -5
+when
+    NamedDataObject(name == "patientId", $patientId: value#String)
+    NamedDataObject(name == "service", $service: value#String)
+then
+    org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules");
+    try {
+        String key = $service + "_card_" + $patientId;
+        if (CacheHelper.getInstance().containsKey(key)) {
+            logger.info("Patient already received this card in the last 24 hours (" + key + "). Removing from response");
+            inferences.put("inCache", true);
+        } else {
+            logger.info("Patient never received this card in the last 24 hours (" + key + "). Adding key to Redis for 24 hours");
+            inferences.put("inCache", false);
+        }
+    } catch (Exception e) {
+        logger.error("Cant create hash or Redis registry for patient card. Returning false", e);
+        inferences.put("inCache", false);
+    }
+end

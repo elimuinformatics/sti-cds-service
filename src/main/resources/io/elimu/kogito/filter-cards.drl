@@ -1,0 +1,43 @@
+package io.elimu.kogito;
+
+import java.util.List;
+import java.util.Map;
+
+import io.elimu.kogito.model.NamedDataObject;
+import io.elimu.kogito.model.Card;
+import io.elimu.kogito.util.CacheHelper;
+import com.google.gson.Gson;
+
+global Map inferences;
+
+rule "Add patient to cache for 24 hours if he received a Card"
+ruleflow-group "filter-cards"
+salience -5
+when
+    NamedDataObject(name == "patientId", $patientId: value#String)
+    NamedDataObject(name == "service", $service: value#String)
+    NamedDataObject(name == "cards", $cards: value#List)
+    exists(Card() from $cards)
+then
+    org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules");
+    try {
+        String key = $service + "_card_" + $patientId;
+        logger.info("Patient never received this card in the last 24 hours (" + key + "). Adding key to Redis for 24 hours");
+        CacheHelper.getInstance().register(key, 86400);
+    } catch (Exception e) {
+        logger.error("Cant create hash or Redis registry for patient card", e);
+    }
+end
+
+rule "Group cards and export json"
+ruleflow-group "filter-cards"
+salience -10
+when
+    NamedDataObject(name == "cards", $cards: value#List)
+    not (NamedDataObject(name == "jsonDone"))
+then
+    String json = new Gson().toJson($cards);
+    insert(new NamedDataObject("jsonDone", true));
+    inferences.put("cardsJson", json); 
+end
+

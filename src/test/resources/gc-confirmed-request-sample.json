@@ -1,0 +1,20 @@
+{
+    "cdshook": {
+        "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
+        "fhirServer": "https://fhir4-internal.elimuinformatics.com/fhir",
+        "hook": "patient-view",
+        "fhirAuthorization": {
+            "access_token": "{{oauth_token}}",
+            "token_type": "Bearer",
+            "expires_in": 300,
+            "scope": "user/Patient.read user/Observation.read",
+            "subject": "48163c5e-88b5-4cb3-92d3-23b800caa927"
+        },
+        "context": {
+            "userId": "Practitioner/example",
+            "patientId": "627513",
+            "encounterId": "89284"
+        },
+        "prefetch": {}
+    }
+}
