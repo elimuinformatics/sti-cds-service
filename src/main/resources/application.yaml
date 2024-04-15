@@ -25,6 +25,7 @@ quarkus:
           policy: permit
   oidc:
     tenant-enabled: false
+  kogito.devservices.enabled: false
 io:
   elimu:
     log-scrubber:
@@ -39,6 +40,12 @@ io:
         - (?i)(password.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
       mask: $1****$4
 
+'%dev':
+  quarkus:
+    log:
+      console:
+        json: false
+        format: '%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) <%X{x-correlation-id}> %s%e%n'
 
 configs:
   procvar:
