@@ -25,7 +25,9 @@ quarkus:
           policy: permit
   oidc:
     tenant-enabled: false
-  kogito.devservices.enabled: false
+
+quarkus.kogito.devservices.enabled: false
+
 io:
   elimu:
     log-scrubber:

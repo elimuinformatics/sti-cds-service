@@ -8,7 +8,7 @@ COPY *.xml /usr/sti-cds-service/
 COPY src/ /usr/sti-cds-service/src
 RUN mvn clean package
 
-FROM amazoncorretto-17
+FROM amazoncorretto:17
 
 ENV LANGUAGE='en_US:en'
 
