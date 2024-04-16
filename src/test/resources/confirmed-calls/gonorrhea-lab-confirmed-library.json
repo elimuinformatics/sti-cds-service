@@ -1,0 +1,36 @@
+{
+  "resourceType": "Bundle",
+  "id": "9429d374-fa9a-4858-b0b0-10473df80e40",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:43.829+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library?_elements=name%2Cversion&_format=json&name=GonorrheaLabConfirmedCDS"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library/GonorrheaLabConfirmedCDS",
+    "resource": {
+      "resourceType": "Library",
+      "id": "GonorrheaLabConfirmedCDS",
+      "meta": {
+        "versionId": "54",
+        "lastUpdated": "2024-02-28T00:46:22.645+00:00",
+        "source": "#mTsaSQgBbLqH601k",
+        "tag": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+          "code": "SUBSETTED",
+          "display": "Resource encoded in summary mode"
+        } ]
+      },
+      "version": "0.0.1",
+      "name": "GonorrheaLabConfirmedCDS"
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}
+

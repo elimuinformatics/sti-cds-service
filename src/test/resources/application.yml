@@ -1,23 +1,23 @@
 CONFIG_CLIENT_ID: config-api
 CONFIG_GRANT_TYPE: password
-CONFIG_PASSWORD: gatica100kkkkk
+CONFIG_PASSWORD: ${TESTPASS}
 CONFIG_SCOPE: openid
-CONFIG_USERNAME: mdemaio
+CONFIG_USERNAME: ${TESTUSER}
 CONFIG_CLIENT_SECRET: asdf
-AUTH_SERVER_URL: https://auth-internal.elimuinformatics.com/auth/realms/product
+AUTH_SERVER_URL: https://oauth-test.com/auth/realms/product
 ENVIRONMENT: dev
 FHIR_GRANT_TYPE: password
-FHIR_PASSWORD: gatica100kkkkk
+FHIR_PASSWORD: ${TESTPASS}
 FHIR_CLIENT_SECRET: asdf
-FHIR_USERNAME: mdemaio
+FHIR_USERNAME: ${TESTUSER}
 FHIR_CLIENT_ID: fhir4-api
 FHIR_SCOPE: openid
 VALID_AUD_LIST: ""
 VALID_ISS_LIST: ""
 VALID_PRESET_KEYS_LIST: ""
 VALID_JKU_LIST: ""
-FHIR_SERVER_URL: https://fhir4-internal.elimuinformatics.com/fhir
-FHIR_TERMINOLOGY_SERVER_URL: https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4
+FHIR_SERVER_URL: https://fhir4-test.com/r4
+FHIR_TERMINOLOGY_SERVER_URL: https://fhir4-test-terminology.com/r4
 HIV_FHIR_SERVER_FILTER: ""
 
 io:

@@ -1,0 +1,12 @@
+{
+  "resourceType": "Bundle",
+  "id": "9333ad9f-f72d-4e73-9a25-f22e2fac46ab",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:58.665+00:00"
+  },
+  "type": "searchset",
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir4-internal.elimuinformatics.com/fhir/Condition?subject=Patient%2F123457"
+  } ]
+}

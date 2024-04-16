@@ -1,0 +1,111 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1196.4469",
+  "meta": {
+    "extension": [ {
+      "url": "http://hapifhir.io/fhir/StructureDefinition/valueset-expansion-message",
+      "valueString": "ValueSet was expanded using an expansion that was pre-calculated at 2023-08-31T00:38:09.618+00:00 (229 days ago)"
+    } ],
+    "versionId": "1"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4469",
+  "status": "active",
+  "compose": {
+    "inactive": true,
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "concept": [ {
+        "code": "2475408",
+        "display": "cabotegravir Injectable Product"
+      }, {
+        "code": "2475415",
+        "display": "{1 (3 ML cabotegravir 200 MG/ML Injection) / 1 (3 ML rilpivirine 300 MG/ML Injection) } Pack"
+      }, {
+        "code": "2475416",
+        "display": "{1 (3 ML cabotegravir 200 MG/ML Injection) / 1 (3 ML rilpivirine 300 MG/ML Injection) } Pack [CABENUVA 600 MG / 900 MG]"
+      }, {
+        "code": "2475417",
+        "display": "{1 (2 ML cabotegravir 200 MG/ML Injection) / 1 (2 ML rilpivirine 300 MG/ML Injection) } Pack"
+      }, {
+        "code": "2475418",
+        "display": "{1 (2 ML cabotegravir 200 MG/ML Injection) / 1 (2 ML rilpivirine 300 MG/ML Injection) } Pack [CABENUVA 400 MG / 600 MG]"
+      }, {
+        "code": "2588046",
+        "display": "Apretude Injectable Product"
+      }, {
+        "code": "2588076",
+        "display": "cabotegravir Injection"
+      }, {
+        "code": "2588077",
+        "display": "3 ML cabotegravir 200 MG/ML Injection"
+      }, {
+        "code": "2588079",
+        "display": "cabotegravir Injection [Apretude]"
+      }, {
+        "code": "2588080",
+        "display": "3 ML cabotegravir 200 MG/ML Injection [Apretude]"
+      }, {
+        "code": "2594978",
+        "display": "2 ML cabotegravir 200 MG/ML Injection"
+      } ]
+    } ]
+  },
+  "expansion": {
+    "identifier": "536a538b-1c43-4e05-a895-e2e086efbce2",
+    "timestamp": "2024-04-16T12:27:01+00:00",
+    "total": 11,
+    "offset": 0,
+    "parameter": [ {
+      "name": "offset",
+      "valueInteger": 0
+    }, {
+      "name": "count",
+      "valueInteger": 1000
+    } ],
+    "contains": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2475408",
+      "display": "cabotegravir Injectable Product"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2475415",
+      "display": "{1 (3 ML cabotegravir 200 MG/ML Injection) / 1 (3 ML rilpivirine 300 MG/ML Injection) } Pack"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2475416",
+      "display": "{1 (3 ML cabotegravir 200 MG/ML Injection) / 1 (3 ML rilpivirine 300 MG/ML Injection) } Pack [CABENUVA 600 MG / 900 MG]"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2475417",
+      "display": "{1 (2 ML cabotegravir 200 MG/ML Injection) / 1 (2 ML rilpivirine 300 MG/ML Injection) } Pack"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2475418",
+      "display": "{1 (2 ML cabotegravir 200 MG/ML Injection) / 1 (2 ML rilpivirine 300 MG/ML Injection) } Pack [CABENUVA 400 MG / 600 MG]"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2588046",
+      "display": "Apretude Injectable Product"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2588076",
+      "display": "cabotegravir Injection"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2588077",
+      "display": "3 ML cabotegravir 200 MG/ML Injection"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2588079",
+      "display": "cabotegravir Injection [Apretude]"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2588080",
+      "display": "3 ML cabotegravir 200 MG/ML Injection [Apretude]"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2594978",
+      "display": "2 ML cabotegravir 200 MG/ML Injection"
+    } ]
+  }
+}

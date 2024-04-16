@@ -1,0 +1,68 @@
+{
+  "resourceType": "Bundle",
+  "id": "2317b83c-7afd-412a-a05b-d849b47aae69",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:56.929+00:00"
+  },
+  "type": "searchset",
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir4-internal.elimuinformatics.com/fhir/Observation?code=http%3A%2F%2Floinc.org%7C24111-7%2Chttp%3A%2F%2Floinc.org%7C29311-8%2Chttp%3A%2F%2Floinc.org%7C31906-1%2Chttp%3A%2F%2Floinc.org%7C36902-5%2Chttp%3A%2F%2Floinc.org%7C43305-2%2Chttp%3A%2F%2Floinc.org%7C43403-5%2Chttp%3A%2F%2Floinc.org%7C43406-8%2Chttp%3A%2F%2Floinc.org%7C45073-4%2Chttp%3A%2F%2Floinc.org%7C45076-7%2Chttp%3A%2F%2Floinc.org%7C5028-6%2Chttp%3A%2F%2Floinc.org%7C698-1%2Chttp%3A%2F%2Floinc.org%7C91781-5%2Chttp%3A%2F%2Floinc.org%7C36903-3%2Chttp%3A%2F%2Floinc.org%7C43405-0&subject=Patient%2F123457"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir4-internal.elimuinformatics.com/fhir/Observation/663694",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "663694",
+      "meta": {
+        "versionId": "2",
+        "lastUpdated": "2023-09-14T22:21:25.000+00:00",
+        "source": "#pgL9nD2EBSmeUFg4"
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "5028-6",
+          "display": "Neisseria gonorrhoeae rRNA [Presence] in Unspecified specimen by DNA probe"
+        } ],
+        "text": "Gonorrhea DNA Probe"
+      },
+      "subject": {
+        "reference": "Patient/123457"
+      },
+      "effectiveDateTime": "2023-08-31T10:28:00+01:00",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "10828004",
+          "display": "Positive (qualifier value)"
+        } ],
+        "text": "Positive"
+      },
+      "interpretation": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "A",
+          "display": "Abnormal"
+        } ],
+        "text": "Abnormal"
+      } ],
+      "specimen": {
+        "reference": "Specimen/663693",
+        "display": "Specimen 663693"
+      }
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}
+

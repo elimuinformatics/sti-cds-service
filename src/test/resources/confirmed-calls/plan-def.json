@@ -1,0 +1,117 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "12056",
+  "meta": {
+    "versionId": "10",
+    "lastUpdated": "2022-12-02T19:08:03.341+00:00",
+    "source": "#r5h1JOpOvxewfnof"
+  },
+  "url": "http://elimu.io/PlanDefinition/SimpleGonorrheaCDS-aziz",
+  "name": "SimpleGonorrheaCDS",
+  "title": "Simple Gonorrhea Management CDS for Hooks Testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule",
+      "display": "ECA Rule"
+    } ]
+  },
+  "status": "draft",
+  "experimental": true,
+  "date": "2022-10-03",
+  "description": "Propose gonorrhea management in conformance with latest guidelines",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "15628003",
+        "display": "Gonorrhea"
+      } ]
+    }
+  } ],
+  "library": [ "http://elimu.io/Library/SimpleGonorrheaCDS2" ],
+  "action": [ {
+    "dynamicValue": [ {
+      "path": "action.title",
+      "expression": {
+        "language": "text/cql-identifier",
+        "expression": "MedNameCardTitle"
+      }
+    }, {
+      "path": "action.description",
+      "expression": {
+        "language": "text/cql-identifier",
+        "expression": "MedNameCardDescription"
+      }
+    }, {
+      "path": "action.extension",
+      "expression": {
+        "language": "text/cql.identifier",
+        "expression": "MedNameCardIndicatorCategory"
+      }
+    } ]
+  }, {
+    "trigger": [ {
+      "type": "named-event",
+      "name": "order-sign"
+    } ],
+    "condition": [ {
+      "kind": "applicability",
+      "expression": {
+        "description": "New diagnosis of urogenital/anorectal gonorrhea and meets criteria for 500 mg dose of ceftriaxone",
+        "language": "text/cql-identifier",
+        "expression": "IsAdolescentOrAdult"
+      }
+    } ],
+    "participant": [ {
+      "type": "practitioner"
+    } ],
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/action-type",
+        "code": "create"
+      } ]
+    },
+    "groupingBehavior": "logical-group",
+    "selectionBehavior": "any",
+    "dynamicValue": [ {
+      "path": "action.title",
+      "expression": {
+        "language": "text/cql-identifier",
+        "expression": "CardTitle"
+      }
+    }, {
+      "path": "action.description",
+      "expression": {
+        "language": "text/cql-identifier",
+        "expression": "CardDetailTextGCOrderSign"
+      }
+    }, {
+      "path": "action.extension",
+      "expression": {
+        "language": "text/cql.identifier",
+        "expression": "CardIndicatorCategory"
+      }
+    } ],
+    "action": [ {
+      "precheckBehavior": "yes",
+      "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500OrderProposal"
+    }, {
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "Meets criteria for Infectious Disease referral",
+          "language": "text/cql-identifier",
+          "expression": "IsFemaleAndPregnant"
+        }
+      } ],
+      "precheckBehavior": "no",
+      "definitionCanonical": "http://elimu.io/ActivityDefinition/IDReferral"
+    } ]
+  } ]
+}

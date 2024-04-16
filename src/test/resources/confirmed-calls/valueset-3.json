@@ -1,0 +1,107 @@
+{
+  "resourceType": "Bundle",
+  "id": "673fc900-653a-4486-9728-a59be205a2f8",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:51.501+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113762.1.4.1196.4448"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113762.1.4.1196.4448",
+    "resource": {
+      "resourceType": "ValueSet",
+      "id": "2.16.840.1.113762.1.4.1196.4448",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-06-29T21:16:46.099+00:00",
+        "source": "#Wzh1sd6e3DsexqZh"
+      },
+      "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4448",
+      "version": "1",
+      "name": "Lidocaine",
+      "title": "Lidocaine",
+      "status": "draft",
+      "date": "2023-06-29T01:00:18-04:00",
+      "compose": {
+        "inactive": true,
+        "include": [ {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "concept": [ {
+            "code": "6387"
+          }, {
+            "code": "107629"
+          }, {
+            "code": "142440"
+          }, {
+            "code": "202398"
+          }, {
+            "code": "215290"
+          }, {
+            "code": "216613"
+          }, {
+            "code": "217935"
+          }, {
+            "code": "218701"
+          }, {
+            "code": "220500"
+          }, {
+            "code": "225489"
+          }, {
+            "code": "226242"
+          }, {
+            "code": "543948"
+          }, {
+            "code": "543951"
+          }, {
+            "code": "809470"
+          }, {
+            "code": "1010033"
+          }, {
+            "code": "1010035"
+          }, {
+            "code": "1013021"
+          }, {
+            "code": "1013024"
+          }, {
+            "code": "1013038"
+          }, {
+            "code": "1013042"
+          }, {
+            "code": "1013044"
+          }, {
+            "code": "1013046"
+          }, {
+            "code": "1013050"
+          }, {
+            "code": "1737562"
+          }, {
+            "code": "1737563"
+          }, {
+            "code": "1737564"
+          }, {
+            "code": "1737565"
+          }, {
+            "code": "1737566"
+          }, {
+            "code": "1737567"
+          }, {
+            "code": "1737568"
+          }, {
+            "code": "1737569"
+          }, {
+            "code": "1737570"
+          }, {
+            "code": "1737571"
+          } ]
+        } ]
+      }
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}

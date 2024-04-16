@@ -1,0 +1,42 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "HIVTestOrderProposal",
+  "meta": {
+    "versionId": "10",
+    "lastUpdated": "2023-11-03T19:06:37.826+00:00",
+    "source": "#dlsWa0RnOFeRbmtM"
+  },
+  "url": "http://elimu.io/ActivityDefinition/HIVTestOrderProposal",
+  "name": "HIVTestOrderProposal",
+  "status": "draft",
+  "description": "HIV Test",
+  "library": [ "http://elimu.io/Library/CDSHooksSupport" ],
+  "kind": "ServiceRequest",
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "31676001",
+      "display": "Human immunodeficiency virus antigen test (procedure)"
+    }, {
+      "system": "urn:com.epic.cdshooks.action.code.system.preference-list-item",
+      "code": "7"
+    } ]
+  },
+  "intent": "proposal",
+  "dynamicValue": [ {
+    "path": "status",
+    "expression": {
+      "description": "set the status of the medication request",
+      "language": "text/cql.identifier",
+      "expression": "Med Req Status"
+    }
+  }, {
+    "path": "category",
+    "expression": {
+      "description": "set the category of the medication request",
+      "language": "text/cql.identifier",
+      "expression": "Med Req Category"
+    }
+  } ]
+}
+

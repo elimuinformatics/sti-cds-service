@@ -1,7 +1,7 @@
 {
     "cdshook": {
         "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
-        "fhirServer": "https://fhir4-internal.elimuinformatics.com/fhir",
+        "fhirServer": "https://fhir4-test.com/r4",
         "hook": "patient-view",
         "fhirAuthorization": {
             "access_token": "{{oauth_token}}",
@@ -12,7 +12,7 @@
         },
         "context": {
             "userId": "Practitioner/example",
-            "patientId": "627513",
+            "patientId": "123457",
             "encounterId": "89284"
         },
         "prefetch": {}
