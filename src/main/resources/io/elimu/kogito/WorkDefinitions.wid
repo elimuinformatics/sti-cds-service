@@ -1,0 +1,78 @@
+[
+  [
+    "name" : "DeserializeHooksRequest",
+    "parameters" : [
+      "requestJson" : new StringDataType()
+    ],
+    "displayName" : "Deserialize Hooks Request",
+    "icon" : "defaultservicenodeicon.gif",
+    "results" : [
+        "cdsHookRequest" : new ObjectDataType(),
+        "hook": new StringDataType(),
+        "hookInstance": new StringDataType(),
+        "user": new StringDataType(),
+        "fhirServer": new StringDataType(),
+        "fhirAuthorization": new ObjectDataType(),
+        "context_xxx":  new ObjectDataType(),
+        "prefetch_xxx":  new ObjectDataType()
+     ]
+  ],
+  [
+    "name" : "RuleInvoke",
+    "parameters" : [
+      "fact_xxx" : new ObjectDataType(),
+      "namedfact_xxx" : new ObjectDataType(),
+      "ruleFlowGroup" : new StringDataType(),
+      "agendaGroup" : new StringDataType(),
+      "inferencesGlobalVariableName": new StringDataType()
+    ],
+    "displayName" : "Invoke Rules",
+    "icon" : "defaultservicenodeicon.gif",
+    "category" : "Data processor",
+    "results" : [
+      "inference_xxxx" : new ObjectDataType()
+    ]
+  ],
+  [
+    "name" : "CallREST",
+    "parameters" : [
+      "url" : new StringDataType(),
+      "body" : new StringDataType(),
+      "path" : new StringDataType(),
+      "method" : new StringDataType(),
+      "param_value_xxx" : new StringDataType(),
+      "header_value_xxx" : new StringDataType(),
+      "body_value_xxx" : new StringDataType(),
+      "clientRequest": new ObjectDataType(),
+      "auth_basic_username" : new StringDataType(),
+      "auth_basic_password" : new StringDataType(),
+      "auth_bearertoken" : new StringDataType(),
+      "bodyEncoding" : new StringDataType()
+    ],
+    "displayName" : "Call API",
+    "icon" : "defaultservicenodeicon.gif",
+    "category" : "APIs",
+    "results" : [
+      "serviceResponse" : new ObjectDataType()
+    ]
+  ],
+  [  
+    "name" : "PlanDefinition",
+    "parameters" : [ 
+      "fhirTerminologyServerUrl" : new StringDataType(),
+      "patientId" : new StringDataType(),
+      "fhirServerUrl" : new StringDataType(),
+      "planDefinitionUrl" : new StringDataType(),
+      "fhirTerminologyServerAuth": new StringDataType(),
+      "fhirServerAuth": new StringDataType(),
+      "context_xxx": new ObjectDataType(),
+      "fhirServer_header_xxx": new StringDataType()
+    ],
+    "displayName" : "Send SMS",
+    "icon" : "defaultservicenodeicon.gif",
+    "results" : [
+        "cardsJson" : new StringDataType(),
+        "cards": new ObjectDataType("java.util.List")
+    ]   
+  ]
+]

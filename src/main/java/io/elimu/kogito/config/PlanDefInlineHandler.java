@@ -177,6 +177,7 @@ public class PlanDefInlineHandler implements KogitoWorkItemHandler {
 	
 	@Override
 	public void executeWorkItem(KogitoWorkItem workItem, KogitoWorkItemManager manager) {
+		LOG.info("Entered PlanDefinition WIH");
 		Map<String, Object> results = workItem.getResults();
 		String fhirServerUrl = (String) workItem.getParameter("fhirServerUrl");
 		String fhirTerminologyServerUrl = (String) workItem.getParameter("fhirTerminologyServerUrl");
@@ -214,6 +215,7 @@ public class PlanDefInlineHandler implements KogitoWorkItemHandler {
 			missingItems.add("planDefinitionId|planDefinitionUrl|planDefinitionJson");
 		}
 		if (!missingItems.isEmpty()) {
+			LOG.info("Missing items: " + missingItems);
 			throw new WorkItemHandlerException("Missing items: " + missingItems);
 		}
 		LOG.debug("Have all the necessary inputs for PlanDefCdsInlineWorkItmeHandler");
@@ -352,6 +354,7 @@ public class PlanDefInlineHandler implements KogitoWorkItemHandler {
 			LOG.warn("PlanDefinitionProcessor execution threw an Exception. Returning error output", e);
 			results.put("error", e.getMessage() == null ? "null message" : e.getMessage());
 		} finally {
+			LOG.info("Exiting PlanDefinition WIH");
 			manager.completeWorkItem(workItem.getStringId(), results);
 		}
 	}

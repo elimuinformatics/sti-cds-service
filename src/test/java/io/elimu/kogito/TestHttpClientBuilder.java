@@ -83,7 +83,7 @@ public class TestHttpClientBuilder {
                 HttpUriRequest req = (HttpUriRequest) invocation.getArgument(0);
                 String key = req.getMethod() + "_" + req.getURI().toASCIIString();
                 log.info("Received call for " + key + " on mock HTTP client");
-                assertTrue(calls.containsKey(key));
+                assertTrue(calls.containsKey(key), "Expected to be waiting for URL " + key);
                 CallItem item = calls.get(key);
                 assertEquals(item.getMethod(), req.getMethod());
                 assertEquals(item.getUrl(), req.getURI().toASCIIString());
