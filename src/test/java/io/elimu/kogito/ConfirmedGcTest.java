@@ -32,6 +32,7 @@ public class ConfirmedGcTest {
     	// fhirServerUrl = https://fhir4-test.com/r4
   	  
     	HttpClient client = new TestHttpClientBuilder().
+            expectCall("POST", "https://auth-internal.elimuinformatics.com/auth/realms/product/protocol/openid-connect/token", 200, getClass().getResource("/confirmed-calls/auth-token.json")).
             expectCall("POST", "https://oauth-test.com/auth/realms/product/protocol/openid-connect/token", 200, getClass().getResource("/confirmed-calls/auth-token.json")).
             expectCall("GET", "https://fhir4-test-terminology.com/r4/PlanDefinition/12056?_format=json", 200, getClass().getResource("/confirmed-calls/plan-def.json")).
             expectCall("GET", "https://fhir4-test-terminology.com/r4/Library?name=SimpleGonorrheaCDS2&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/confirmed-calls/simple-gonorrhea-library.json")).
