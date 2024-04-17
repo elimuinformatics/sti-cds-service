@@ -7,7 +7,9 @@ import static org.junit.Assert.assertEquals;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.HttpClient;
@@ -45,7 +47,7 @@ public class ConfirmedGcTest {
             expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/Observation?code=http%3A%2F%2Floinc.org%7C18833-4%2Chttp%3A%2F%2Floinc.org%7C29463-7%2Chttp%3A%2F%2Floinc.org%7C3141-9%2Chttp%3A%2F%2Floinc.org%7C3142-7%2Chttp%3A%2F%2Floinc.org%7C75292-3%2Chttp%3A%2F%2Floinc.org%7C79348-9%2Chttp%3A%2F%2Floinc.org%7C8335-2%2Chttp%3A%2F%2Floinc.org%7C8340-2%2Chttp%3A%2F%2Floinc.org%7C8341-0%2Chttp%3A%2F%2Floinc.org%7C8350-1%2Chttp%3A%2F%2Floinc.org%7C8351-9&subject=Patient%2F123457", 200, getClass().getResource("/confirmed-calls/observations.json")).
             expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2FGonorrheaTestsUnspecSite", 200, getClass().getResource("/confirmed-calls/valueset-7.json")).
             expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/GonorrheaTestsUnspecSite/$expand", 200, getClass().getResource("/confirmed-calls/valueset-8.json")).
-            expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/Observation?code=http%3A%2F%2Floinc.org%7C24111-7%2Chttp%3A%2F%2Floinc.org%7C29311-8%2Chttp%3A%2F%2Floinc.org%7C31906-1%2Chttp%3A%2F%2Floinc.org%7C36902-5%2Chttp%3A%2F%2Floinc.org%7C43305-2%2Chttp%3A%2F%2Floinc.org%7C43403-5%2Chttp%3A%2F%2Floinc.org%7C43406-8%2Chttp%3A%2F%2Floinc.org%7C45073-4%2Chttp%3A%2F%2Floinc.org%7C45076-7%2Chttp%3A%2F%2Floinc.org%7C5028-6%2Chttp%3A%2F%2Floinc.org%7C698-1%2Chttp%3A%2F%2Floinc.org%7C91781-5%2Chttp%3A%2F%2Floinc.org%7C36903-3%2Chttp%3A%2F%2Floinc.org%7C43405-0&subject=Patient%2F123457", 200, getClass().getResource("/confirmed-calls/observations-2.json")).
+            expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/Observation?code=http%3A%2F%2Floinc.org%7C24111-7%2Chttp%3A%2F%2Floinc.org%7C29311-8%2Chttp%3A%2F%2Floinc.org%7C31906-1%2Chttp%3A%2F%2Floinc.org%7C36902-5%2Chttp%3A%2F%2Floinc.org%7C43305-2%2Chttp%3A%2F%2Floinc.org%7C43403-5%2Chttp%3A%2F%2Floinc.org%7C43406-8%2Chttp%3A%2F%2Floinc.org%7C45073-4%2Chttp%3A%2F%2Floinc.org%7C45076-7%2Chttp%3A%2F%2Floinc.org%7C5028-6%2Chttp%3A%2F%2Floinc.org%7C698-1%2Chttp%3A%2F%2Floinc.org%7C91781-5%2Chttp%3A%2F%2Floinc.org%7C36903-3%2Chttp%3A%2F%2Floinc.org%7C43405-0&subject=Patient%2F123457", 200, transformData("/confirmed-calls/observations-2.json", "\\{\\{yesterday\\}\\}", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(new Date(System.currentTimeMillis() - 86400000)))).
             expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/MedicationRequest?subject=Patient%2F123457", 200, getClass().getResource("/confirmed-calls/med-requests.json")).
             expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/Condition?subject=Patient%2F123457", 200, getClass().getResource("/confirmed-calls/conditions.json")).
     		expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/Medication/et6kIqz57048TZ-zI", 200, getClass().getResource("/confirmed-calls/medication-1.json")).
@@ -59,6 +61,19 @@ public class ConfirmedGcTest {
     		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/HIVTestOrderProposal/_history/10", 200, getClass().getResource("/confirmed-calls/hiv-test-activity-def-direct.json")).
     		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library?name=CDSHooksSupport&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/confirmed-calls/cds-hooks-support-library.json")).
     		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library/CDSHooksSupport/_history/1?_format=json&_elements=name%2Ctype%2Cversion%2Ccontent", 200, getClass().getResource("/confirmed-calls/cds-hooks-support-library-direct.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.464.1003.120.12.1003", 200, getClass().getResource("/confirmed-calls/valueset-13.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1003/$expand", 200, getClass().getResource("/confirmed-calls/valueset-14.json")).
+		expectCall("GET", "https://fhir4-internal.elimuinformatics.com/fhir/Specimen/663693", 200, getClass().getResource("/confirmed-calls/specimen.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113762.1.4.1196.4467", 200, getClass().getResource("/confirmed-calls/valueset-15.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113762.1.4.1196.4467/$expand", 200, getClass().getResource("/confirmed-calls/valueset-16.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113762.1.4.1196.4466", 200, getClass().getResource("/confirmed-calls/valueset-17.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113762.1.4.1196.4466/$expand", 200, getClass().getResource("/confirmed-calls/valueset-18.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FCeftriaxone500OrderProposal", 200, getClass().getResource("/confirmed-calls/actdef-2.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Ceftriaxone500OrderProposal/_history/25", 200, getClass().getResource("/confirmed-calls/actdef-2-direct.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/confirmed-calls/actdef-3.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Gentamicin240OrderProposal/_history/13", 200, getClass().getResource("/confirmed-calls/actdef-3-direct.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FAzithromycin2GmOrderProposal", 200, getClass().getResource("/confirmed-calls/actdef-4.json")).
+		expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Azithromycin2GmOrderProposal/_history/3", 200, getClass().getResource("/confirmed-calls/actdef-4-direct.json")).
     		build();
 
         AuthHelper.setTestClient(client);
@@ -74,7 +89,14 @@ public class ConfirmedGcTest {
             .response();
         List<?> cards = response.jsonPath().getList("cards");
         assertNotNull(cards);
-        assertEquals(0, cards.size());
+        assertEquals(1, cards.size());
+    }
+
+    String transformData(String file, String text, String replaceWith) throws IOException {
+	String content = new String(getClass().getResourceAsStream(file).readAllBytes());
+	String retval = content.replaceAll(text, replaceWith);
+	org.slf4j.LoggerFactory.getLogger(ConfirmedGcTest.class).info("TRAANSFORMED DATA = " + retval);
+	return retval;
     }
 }
 

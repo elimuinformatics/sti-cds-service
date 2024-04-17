@@ -1,0 +1,105 @@
+{
+    "resourceType": "Bundle",
+    "id": "2f8c0018-d200-468d-8f48-a33c44982c74",
+    "meta": {
+        "lastUpdated": "2024-04-17T14:37:49.567+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FAzithromycin2GmOrderProposal"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Azithromycin2GmOrderProposal",
+            "resource": {
+                "resourceType": "ActivityDefinition",
+                "id": "Azithromycin2GmOrderProposal",
+                "meta": {
+                    "versionId": "3",
+                    "lastUpdated": "2023-06-29T19:23:41.614+00:00",
+                    "source": "#K04mmpFLHY3kcirT"
+                },
+                "url": "http://elimu.io/ActivityDefinition/Azithromycin2GmOrderProposal",
+                "name": "Azithromycin2GmOrderProposal",
+                "status": "draft",
+                "description": "Azithromycin 2 g PO x1 dose",
+                "library": [
+                    "http://elimu.io/Library/CDSHooksSupport"
+                ],
+                "kind": "MedicationRequest",
+                "intent": "proposal",
+                "productCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "248656",
+                            "display": "azithromycin 500 MG Oral Tablet"
+                        },
+                        {
+                            "system": "urn:com.epic.cdshooks.action.code.system.preference-list-item",
+                            "code": "4"
+                        }
+                    ]
+                },
+                "dosage": [
+                    {
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "26643006",
+                                    "display": "Oral route"
+                                }
+                            ]
+                        },
+                        "method": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "419652001",
+                                    "display": "Take"
+                                }
+                            ],
+                            "text": "Take or administer by mouth"
+                        },
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "value": 2000,
+                                    "unit": "mg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "dynamicValue": [
+                    {
+                        "path": "status",
+                        "expression": {
+                            "description": "set the status of the medication request",
+                            "language": "text/cql.identifier",
+                            "expression": "Med Req Status"
+                        }
+                    },
+                    {
+                        "path": "category",
+                        "expression": {
+                            "description": "set the category of the medication request",
+                            "language": "text/cql.identifier",
+                            "expression": "Med Req Category"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

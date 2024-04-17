@@ -38,7 +38,7 @@
       "subject": {
         "reference": "Patient/123457"
       },
-      "effectiveDateTime": "2023-08-31T10:28:00+01:00",
+      "effectiveDateTime": "{{yesterday}}",
       "valueCodeableConcept": {
         "coding": [ {
           "system": "http://snomed.info/sct",
