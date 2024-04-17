@@ -1,0 +1,119 @@
+{
+  "resourceType": "Bundle",
+  "id": "0cbd82fd-5e7a-4892-bf24-a64f108c81a5",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:27:02.754+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113762.1.4.1196.4474"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113762.1.4.1196.4474",
+    "resource": {
+      "resourceType": "ValueSet",
+      "id": "2.16.840.1.113762.1.4.1196.4474",
+      "meta": {
+        "versionId": "2",
+        "lastUpdated": "2024-01-31T05:57:42.488+00:00",
+        "source": "#lpYcFkNz70WpJLIo"
+      },
+      "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4474",
+      "version": "20220219",
+      "name": "HIVLabTestsAntibodyAntigenSerum",
+      "title": "HIV Lab Tests: Antibody or Antigen in Serum",
+      "status": "active",
+      "experimental": false,
+      "date": "2023-10-05T01:07:29-05:00",
+      "publisher": "Elimu",
+      "description": "HIV tests without antibody subtypes or specimens other than serum",
+      "compose": {
+        "inactive": true,
+        "include": [ {
+          "system": "http://loinc.org",
+          "concept": [ {
+            "code": "14092-1",
+            "display": "HIV 1 Ab [Presence] in Serum by Immunofluorescence"
+          }, {
+            "code": "16975-5",
+            "display": "HIV 1 IgG Ab [Presence] in Serum"
+          }, {
+            "code": "18396-2",
+            "display": "HIV 1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "24012-7",
+            "display": "HIV 1 Ag [Presence] in Serum"
+          }, {
+            "code": "29893-5",
+            "display": "HIV 1 Ab [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "30361-0",
+            "display": "HIV 2 Ab [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "31201-7",
+            "display": "HIV 1+2 Ab [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "33660-2",
+            "display": "HIV 1 p24 Ag [Presence] in Serum or Plasma by Neutralization test"
+          }, {
+            "code": "33806-1",
+            "display": "HIV 2 IgG Ab [Presence] in Serum by Immunoblot"
+          }, {
+            "code": "33807-9",
+            "display": "HIV 2 IgG Ab [Presence] in Serum"
+          }, {
+            "code": "40732-0",
+            "display": "HIV 1 IgG Ab [Presence] in Serum by Immunoblot"
+          }, {
+            "code": "40733-8",
+            "display": "HIV 1+2 IgG Ab [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "43009-0",
+            "display": "HIV 1+2 IgG Ab [Presence] in Serum"
+          }, {
+            "code": "43011-6",
+            "display": "HIV 1 p24 Ab [Presence] in Serum"
+          }, {
+            "code": "44873-8",
+            "display": "HIV 1+2 Ab [Presence] in Serum by Immunoblot"
+          }, {
+            "code": "5221-7",
+            "display": "HIV 1 Ab [Presence] in Serum or Plasma by Immunoblot"
+          }, {
+            "code": "5222-5",
+            "display": "HIV 1 Ag [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "5225-8",
+            "display": "HIV 2 Ab [Presence] in Serum by Immunoblot"
+          }, {
+            "code": "56888-1",
+            "display": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+          }, {
+            "code": "7917-8",
+            "display": "HIV 1 Ab [Presence] in Serum"
+          }, {
+            "code": "7918-6",
+            "display": "HIV 1+2 Ab [Presence] in Serum"
+          }, {
+            "code": "7919-4",
+            "display": "HIV 2 Ab [Presence] in Serum"
+          }, {
+            "code": "85686-4",
+            "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Immunofluorescence"
+          }, {
+            "code": "86233-4",
+            "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Immunoblot"
+          }, {
+            "code": "9821-0",
+            "display": "HIV 1 p24 Ag [Presence] in Serum"
+          } ]
+        } ]
+      }
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}

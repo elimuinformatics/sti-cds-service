@@ -1,0 +1,42 @@
+{
+  "resourceType": "Medication",
+  "id": "et6kIqz57048TZ-zI",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-09-14T17:48:31.000+00:00",
+    "source": "#AAH3E1Ym9vv4LLBS"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">cefTRIAXone (ROCEPHIN) injection</div></div>"
+  },
+  "identifier": [ {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.301.3.7.2.698288",
+    "value": "40822761"
+  } ],
+  "code": {
+    "text": "cefTRIAXone (ROCEPHIN) injection"
+  },
+  "ingredient": [ {
+    "itemReference": {
+      "reference": "Medication/eGVdHiKbEpRO.9kB3xR",
+      "display": "cefTRIAXone"
+    },
+    "strength": {
+      "numerator": {
+        "value": 500,
+        "unit": "mg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+      },
+      "denominator": {
+        "value": 1.43,
+        "unit": "mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mL"
+      }
+    }
+  } ]
+}
+

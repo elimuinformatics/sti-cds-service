@@ -1,0 +1,209 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1196.4474",
+  "meta": {
+    "extension": [ {
+      "url": "http://hapifhir.io/fhir/StructureDefinition/valueset-expansion-message",
+      "valueString": "ValueSet was expanded using an expansion that was pre-calculated at 2024-01-31T05:58:43.065+00:00 (76 days ago)"
+    } ],
+    "versionId": "2"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4474",
+  "status": "active",
+  "compose": {
+    "inactive": true,
+    "include": [ {
+      "system": "http://loinc.org",
+      "concept": [ {
+        "code": "14092-1",
+        "display": "HIV 1 Ab [Presence] in Serum by Immunofluorescence"
+      }, {
+        "code": "16975-5",
+        "display": "HIV 1 IgG Ab [Presence] in Serum"
+      }, {
+        "code": "18396-2",
+        "display": "HIV 1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "24012-7",
+        "display": "HIV 1 Ag [Presence] in Serum"
+      }, {
+        "code": "29893-5",
+        "display": "HIV 1 Ab [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "30361-0",
+        "display": "HIV 2 Ab [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "31201-7",
+        "display": "HIV 1+2 Ab [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "33660-2",
+        "display": "HIV 1 p24 Ag [Presence] in Serum or Plasma by Neutralization test"
+      }, {
+        "code": "33806-1",
+        "display": "HIV 2 IgG Ab [Presence] in Serum by Immunoblot"
+      }, {
+        "code": "33807-9",
+        "display": "HIV 2 IgG Ab [Presence] in Serum"
+      }, {
+        "code": "40732-0",
+        "display": "HIV 1 IgG Ab [Presence] in Serum by Immunoblot"
+      }, {
+        "code": "40733-8",
+        "display": "HIV 1+2 IgG Ab [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "43009-0",
+        "display": "HIV 1+2 IgG Ab [Presence] in Serum"
+      }, {
+        "code": "43011-6",
+        "display": "HIV 1 p24 Ab [Presence] in Serum"
+      }, {
+        "code": "44873-8",
+        "display": "HIV 1+2 Ab [Presence] in Serum by Immunoblot"
+      }, {
+        "code": "5221-7",
+        "display": "HIV 1 Ab [Presence] in Serum or Plasma by Immunoblot"
+      }, {
+        "code": "5222-5",
+        "display": "HIV 1 Ag [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "5225-8",
+        "display": "HIV 2 Ab [Presence] in Serum by Immunoblot"
+      }, {
+        "code": "56888-1",
+        "display": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+      }, {
+        "code": "7917-8",
+        "display": "HIV 1 Ab [Presence] in Serum"
+      }, {
+        "code": "7918-6",
+        "display": "HIV 1+2 Ab [Presence] in Serum"
+      }, {
+        "code": "7919-4",
+        "display": "HIV 2 Ab [Presence] in Serum"
+      }, {
+        "code": "85686-4",
+        "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Immunofluorescence"
+      }, {
+        "code": "86233-4",
+        "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Immunoblot"
+      }, {
+        "code": "9821-0",
+        "display": "HIV 1 p24 Ag [Presence] in Serum"
+      } ]
+    } ]
+  },
+  "expansion": {
+    "identifier": "72a65a7e-38d7-4f59-b090-ec0ba927001e",
+    "timestamp": "2024-04-16T12:27:03+00:00",
+    "total": 25,
+    "offset": 0,
+    "parameter": [ {
+      "name": "offset",
+      "valueInteger": 0
+    }, {
+      "name": "count",
+      "valueInteger": 1000
+    } ],
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "14092-1",
+      "display": "HIV 1 Ab [Presence] in Serum by Immunofluorescence"
+    }, {
+      "system": "http://loinc.org",
+      "code": "16975-5",
+      "display": "HIV 1 IgG Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "18396-2",
+      "display": "HIV 1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "24012-7",
+      "display": "HIV 1 Ag [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "29893-5",
+      "display": "HIV 1 Ab [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "30361-0",
+      "display": "HIV 2 Ab [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "31201-7",
+      "display": "HIV 1+2 Ab [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "33660-2",
+      "display": "HIV 1 p24 Ag [Presence] in Serum or Plasma by Neutralization test"
+    }, {
+      "system": "http://loinc.org",
+      "code": "33806-1",
+      "display": "HIV 2 IgG Ab [Presence] in Serum by Immunoblot"
+    }, {
+      "system": "http://loinc.org",
+      "code": "33807-9",
+      "display": "HIV 2 IgG Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "40732-0",
+      "display": "HIV 1 IgG Ab [Presence] in Serum by Immunoblot"
+    }, {
+      "system": "http://loinc.org",
+      "code": "40733-8",
+      "display": "HIV 1+2 IgG Ab [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "43009-0",
+      "display": "HIV 1+2 IgG Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "43011-6",
+      "display": "HIV 1 p24 Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "44873-8",
+      "display": "HIV 1+2 Ab [Presence] in Serum by Immunoblot"
+    }, {
+      "system": "http://loinc.org",
+      "code": "5221-7",
+      "display": "HIV 1 Ab [Presence] in Serum or Plasma by Immunoblot"
+    }, {
+      "system": "http://loinc.org",
+      "code": "5222-5",
+      "display": "HIV 1 Ag [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "5225-8",
+      "display": "HIV 2 Ab [Presence] in Serum by Immunoblot"
+    }, {
+      "system": "http://loinc.org",
+      "code": "56888-1",
+      "display": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "7917-8",
+      "display": "HIV 1 Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "7918-6",
+      "display": "HIV 1+2 Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "7919-4",
+      "display": "HIV 2 Ab [Presence] in Serum"
+    }, {
+      "system": "http://loinc.org",
+      "code": "85686-4",
+      "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Immunofluorescence"
+    }, {
+      "system": "http://loinc.org",
+      "code": "86233-4",
+      "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Immunoblot"
+    }, {
+      "system": "http://loinc.org",
+      "code": "9821-0",
+      "display": "HIV 1 p24 Ag [Presence] in Serum"
+    } ]
+  }
+}

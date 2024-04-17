@@ -1,0 +1,98 @@
+{
+    "resourceType": "ActivityDefinition",
+    "id": "Ceftriaxone500NoLidoOrderProposal",
+    "meta": {
+        "versionId": "5",
+        "lastUpdated": "2023-07-18T16:51:04.643+00:00",
+        "source": "#cm5oEFYTYKXcAKWN"
+    },
+    "url": "http://elimu.io/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal",
+    "name": "Ceftriaxone500NoLidoOrderProposal",
+    "title": "500 mg Intramuscular",
+    "status": "draft",
+    "description": "cefTRIAXone (ROCEPHIN) 500 mg IM",
+    "library": [
+        "http://elimu.io/Library/CDSHooksSupport"
+    ],
+    "kind": "MedicationRequest",
+    "intent": "proposal",
+    "productCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665005",
+                "display": "ceftriaxone 500 MG Injection"
+            },
+            {
+                "system": "urn:com.epic.cdshooks.action.code.system.preference-list-item",
+                "code": "1"
+            }
+        ],
+        "text": "ceftriaxone 500 MG Injection"
+    },
+    "dosage": [
+        {
+            "timing": {
+                "repeat": {
+                    "count": 1,
+                    "countMax": 1
+                }
+            },
+            "site": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "206007",
+                        "display": "Gluteus maximus muscle"
+                    }
+                ]
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "78421000",
+                        "display": "Intramuscular route"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "422145002",
+                        "display": "Inject"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 500,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                    }
+                }
+            ]
+        }
+    ],
+    "dynamicValue": [
+        {
+            "path": "status",
+            "expression": {
+                "description": "set the status of the medication request",
+                "language": "text/cql.identifier",
+                "expression": "Med Req Status"
+            }
+        },
+        {
+            "path": "category",
+            "expression": {
+                "description": "set the category of the medication request",
+                "language": "text/cql.identifier",
+                "expression": "Med Req Category"
+            }
+        }
+    ]
+}

@@ -26,7 +26,7 @@ public class ConfirmedGcTest {
 
     @Test
     @TestSecurity(authorizationEnabled = false)
-    void testConfig() throws IOException, URISyntaxException, InterruptedException {
+    void testConfirmedGCCards() throws IOException, URISyntaxException, InterruptedException {
     	HttpClient client = new TestHttpClientBuilder().
             expectCall("POST", "https://auth-internal.elimuinformatics.com/auth/realms/product/protocol/openid-connect/token", 200, getClass().getResource("/confirmed-calls/auth-token.json")).
             expectCall("GET", "https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition/12056?_format=json", 200, getClass().getResource("/confirmed-calls/plan-def.json")).

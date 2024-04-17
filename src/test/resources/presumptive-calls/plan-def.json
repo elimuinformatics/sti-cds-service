@@ -1,0 +1,641 @@
+{
+    "resourceType": "Bundle",
+    "id": "da2b8168-555b-4eb3-b78a-5d5a36dd9f5a",
+    "meta": {
+        "lastUpdated": "2024-04-17T19:09:20.137+00:00"
+    },
+    "type": "searchset",
+    "total": 2,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition?_format=json&url=http%3A%2F%2Felimu.io%2FPlanDefinition%2FGonorrheaCDSPresumptiveTreatment"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition/GonorrheaCDSPresumptiveTreatment",
+            "resource": {
+                "resourceType": "PlanDefinition",
+                "id": "GonorrheaCDSPresumptiveTreatment",
+                "meta": {
+                    "versionId": "43",
+                    "lastUpdated": "2023-10-17T15:50:08.721+00:00",
+                    "source": "#EHVrqreQC6XDekeo"
+                },
+                "url": "http://elimu.io/PlanDefinition/GonorrheaCDSPresumptiveTreatment",
+                "name": "GonorrheaCDSPresumptiveTreatment",
+                "title": "Gonorrhea Management CDS: Presumptive Treatment Scenario",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+                            "code": "eca-rule",
+                            "display": "ECA Rule"
+                        }
+                    ]
+                },
+                "status": "draft",
+                "experimental": true,
+                "date": "2023-06-29",
+                "description": "Propose gonorrhea management in conformance with latest guidelines, in response to likely presumptive treatment as inferred by the ordering of intramuscular ceftriaxone, also to provide info on HIV PrEP or suggest testing if needed",
+                "useContext": [
+                    {
+                        "code": {
+                            "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+                            "code": "focus",
+                            "display": "Clinical Focus"
+                        },
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "15628003",
+                                    "display": "Gonorrhea"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "library": [
+                    "http://elimu.io/Library/GonorrheaTxCDS"
+                ],
+                "action": [
+                    {
+                        "documentation": [
+                            {
+                                "type": "documentation",
+                                "display": "CDC's (STI) Treatment Guidelines, 2021",
+                                "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm"
+                            }
+                        ],
+                        "trigger": [
+                            {
+                                "type": "named-event",
+                                "name": "order-sign"
+                            }
+                        ],
+                        "condition": [
+                            {
+                                "kind": "applicability",
+                                "expression": {
+                                    "description": "Is age 13 or higher, and has new order for intramuscular ceftriaxone of the wrong dose for weight",
+                                    "language": "text/cql",
+                                    "expression": "NeedsAnyGCTxRec"
+                                }
+                            }
+                        ],
+                        "participant": [
+                            {
+                                "type": "practitioner"
+                            }
+                        ],
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/action-type",
+                                    "code": "create"
+                                }
+                            ]
+                        },
+                        "groupingBehavior": "logical-group",
+                        "selectionBehavior": "any",
+                        "dynamicValue": [
+                            {
+                                "path": "action.title",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardTitlePresumptiveGCTx"
+                                }
+                            },
+                            {
+                                "path": "action.description",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardDetailTextGCTx"
+                                }
+                            },
+                            {
+                                "path": "action.extension",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardIndicatorCategory"
+                                }
+                            },
+                            {
+                                "path": "action.extension.override",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "overrideReasonsForCeftriaxoneIMCard"
+                                }
+                            }
+                        ],
+                        "action": [
+                            {
+                                "description": "Remove Ceftriaxone draft order",
+                                "type": {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/action-type",
+                                            "code": "remove"
+                                        }
+                                    ]
+                                },
+                                "precheckBehavior": "yes",
+                                "dynamicValue": [
+                                    {
+                                        "path": "action.id",
+                                        "expression": {
+                                            "language": "text/cql.identifier",
+                                            "expression": "DraftCetriaxoneIMOrderId"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked ceftriaxone 500 mg IM x1, with lidocaine (default)",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax500PrecheckedWithLido"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked ceftriaxone 500 mg IM x1, without lidocaine",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax500PrecheckedNoLido"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked ceftriaxone 1 gram IM x1, with lidocaine (default)",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax1000PrecheckedWithLido"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone1000OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked ceftriaxone 1 gram IM x1, no lidocaine",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax1000PrecheckedNoLido"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone1000NoLidoOrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for a non-prechecked ceftriaxone 500 mg IM x1, with lidocaine (default)",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax500OptionWithLido"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for a non-prechecked ceftriaxone 500 mg IM x1, no lidocaine",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax500OptionNoLido"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Has beta lactam allergy, and needs option for gentamicin 240 mg",
+                                            "language": "text/cql",
+                                            "expression": "NeedsAllergyOptions"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Gentamicin240OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Has beta lactam allergy, and needs option for azithromycin 2 gram",
+                                            "language": "text/cql",
+                                            "expression": "NeedsAllergyOptions"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Azithromycin2GmOrderProposal"
+                            }
+                        ]
+                    },
+                    {
+                        "documentation": [
+                            {
+                                "type": "documentation",
+                                "display": "CDC's HIV PrEP Info for Clinicians",
+                                "url": "https://www.cdc.gov/hiv/clinicians/prevention/prescribe-prep.html"
+                            }
+                        ],
+                        "trigger": [
+                            {
+                                "type": "named-event",
+                                "name": "order-sign"
+                            }
+                        ],
+                        "condition": [
+                            {
+                                "kind": "applicability",
+                                "expression": {
+                                    "description": "Meets basic inclusion criteria and trigger: age 13 or higher, and has new order for intramuscular ceftriaxone, and without exclusion criteria for HIV PrEP recommendations",
+                                    "language": "text/cql",
+                                    "expression": "NeedsAnyHIVPrepRec"
+                                }
+                            }
+                        ],
+                        "participant": [
+                            {
+                                "type": "practitioner"
+                            }
+                        ],
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/action-type",
+                                    "code": "create"
+                                }
+                            ]
+                        },
+                        "groupingBehavior": "logical-group",
+                        "selectionBehavior": "any",
+                        "dynamicValue": [
+                            {
+                                "path": "action.title",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardTitleHIVRecs"
+                                }
+                            },
+                            {
+                                "path": "action.description",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardDetailTextHIVRecs"
+                                }
+                            },
+                            {
+                                "path": "action.extension",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardIndicatorCategory"
+                                }
+                            },
+                            {
+                                "path": "action.extension.override",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "overrideReasonsForPrEPCard"
+                                }
+                            }
+                        ],
+                        "action": [
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked order for a laboratory-based HIV test",
+                                            "language": "text/cql",
+                                            "expression": "HasNoRecentHIVTest"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/HIVTestOrderProposal"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition/GonorrheaCDSPresumptiveTreatment-UnitTest",
+            "resource": {
+                "resourceType": "PlanDefinition",
+                "id": "GonorrheaCDSPresumptiveTreatment-UnitTest",
+                "meta": {
+                    "versionId": "5",
+                    "lastUpdated": "2023-06-07T05:48:38.999+00:00",
+                    "source": "#BgbTK81tCFLOyR92"
+                },
+                "url": "http://elimu.io/PlanDefinition/GonorrheaCDSPresumptiveTreatment",
+                "name": "GonorrheaCDSPresumptiveTreatment",
+                "title": "Gonorrhea Management CDS: Presumptive Treatment Scenario",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+                            "code": "eca-rule",
+                            "display": "ECA Rule"
+                        }
+                    ]
+                },
+                "status": "draft",
+                "experimental": true,
+                "date": "2023-03-01",
+                "description": "Propose gonorrhea management in conformance with latest guidelines, in response to likely presumptive treatment as inferred by the ordering of intramuscular ceftriaxone; concomitant recommendations for Chlamydia treatment are given, if needed",
+                "useContext": [
+                    {
+                        "code": {
+                            "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+                            "code": "focus",
+                            "display": "Clinical Focus"
+                        },
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "15628003",
+                                    "display": "Gonorrhea"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "library": [
+                    "http://elimu.io/Library/GonorrheaTxCDS"
+                ],
+                "action": [
+                    {
+                        "trigger": [
+                            {
+                                "type": "named-event",
+                                "name": "order-sign"
+                            }
+                        ],
+                        "condition": [
+                            {
+                                "kind": "applicability",
+                                "expression": {
+                                    "description": "Meets basic inclusion criteria and trigger: age 13 or higher, and has new order for intramuscular ceftriaxone",
+                                    "language": "text/cql",
+                                    "expression": "IsAgeGT13WithNewIMCeftriaxOrder"
+                                }
+                            }
+                        ],
+                        "participant": [
+                            {
+                                "type": "practitioner"
+                            }
+                        ],
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/action-type",
+                                    "code": "create"
+                                }
+                            ]
+                        },
+                        "groupingBehavior": "logical-group",
+                        "selectionBehavior": "any",
+                        "dynamicValue": [
+                            {
+                                "path": "action.title",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardTitlePresumptiveGCTx"
+                                }
+                            },
+                            {
+                                "path": "action.description",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardDetailTextGCTx"
+                                }
+                            },
+                            {
+                                "path": "action.extension",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardIndicatorCategory"
+                                }
+                            },
+                            {
+                                "path": "action.extension.override",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "overrideReasonsForCeftriaxoneIMCard"
+                                }
+                            }
+                        ],
+                        "action": [
+                            {
+                                "description": "Remove Ceftriaxone draft order",
+                                "type": {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/action-type",
+                                            "code": "remove"
+                                        }
+                                    ]
+                                },
+                                "dynamicValue": [
+                                    {
+                                        "path": "action.id",
+                                        "expression": {
+                                            "language": "text/cql.identifier",
+                                            "expression": "DraftCetriaxoneIMOrderId"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked ceftriaxone 500 mg IM x1",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax500Prechecked"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for prechecked ceftriaxone 1 gram IM x1",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax1000Prechecked"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "yes",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone1000OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Meets criteria for a non-prechecked ceftriaxone 500 mg IM x1",
+                                            "language": "text/cql",
+                                            "expression": "NeedsCeftriax500Option"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Ceftriaxone500OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Has beta lactam allergy, and needs option for gentamicin 240 mg",
+                                            "language": "text/cql",
+                                            "expression": "NeedsAllergyOptions"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Gentamicin240OrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Has beta lactam allergy, and needs option for azithromycin 2 gram",
+                                            "language": "text/cql",
+                                            "expression": "NeedsAllergyOptions"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/Azithromycin2GmOrderProposal"
+                            },
+                            {
+                                "condition": [
+                                    {
+                                        "kind": "applicability",
+                                        "expression": {
+                                            "description": "Has beta lactam allergy, and needs option for ID referral",
+                                            "language": "text/cql",
+                                            "expression": "NeedsAllergyOptions"
+                                        }
+                                    }
+                                ],
+                                "precheckBehavior": "no",
+                                "definitionCanonical": "http://elimu.io/ActivityDefinition/IDReferral"
+                            }
+                        ]
+                    },
+                    {
+                        "trigger": [
+                            {
+                                "type": "named-event",
+                                "name": "order-sign"
+                            }
+                        ],
+                        "condition": [
+                            {
+                                "kind": "applicability",
+                                "expression": {
+                                    "description": "Meets trigger as above for presumptive gonorrhea treatment, and has positive or possible Chlamydia",
+                                    "language": "text/cql",
+                                    "expression": "NeedsChlamydiaTxRec"
+                                }
+                            }
+                        ],
+                        "participant": [
+                            {
+                                "type": "practitioner"
+                            }
+                        ],
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/action-type",
+                                    "code": "create"
+                                }
+                            ]
+                        },
+                        "groupingBehavior": "logical-group",
+                        "selectionBehavior": "any",
+                        "dynamicValue": [
+                            {
+                                "path": "action.title",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardTitleAdditionalGCRecs"
+                                }
+                            },
+                            {
+                                "path": "action.description",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardDetailTextAdditionalGCRecs"
+                                }
+                            },
+                            {
+                                "path": "action.extension",
+                                "expression": {
+                                    "language": "text/cql.identifier",
+                                    "expression": "CardIndicatorCategory"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

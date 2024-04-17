@@ -1,0 +1,96 @@
+{
+    "resourceType": "ActivityDefinition",
+    "id": "Gentamicin240OrderProposal",
+    "meta": {
+        "versionId": "13",
+        "lastUpdated": "2023-06-29T19:23:06.482+00:00",
+        "source": "#AQadWjWBCt7ML5o9"
+    },
+    "url": "http://elimu.io/ActivityDefinition/Gentamicin240OrderProposal",
+    "name": "Gentamicin240OrderProposal",
+    "status": "draft",
+    "description": "Gentamicin 240mg IM x1 dose",
+    "library": [
+        "http://elimu.io/Library/CDSHooksSupport"
+    ],
+    "kind": "MedicationRequest",
+    "intent": "proposal",
+    "productCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1485222",
+                "display": "gentamicin 100 MG/ML Injectable Solution"
+            },
+            {
+                "system": "urn:com.epic.cdshooks.action.code.system.preference-list-item",
+                "code": "3"
+            }
+        ]
+    },
+    "dosage": [
+        {
+            "timing": {
+                "repeat": {
+                    "count": 1,
+                    "countMax": 1
+                }
+            },
+            "site": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "206007",
+                        "display": "Gluteus maximus muscle"
+                    }
+                ]
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "78421000",
+                        "display": "Intramuscular route"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "422145002",
+                        "display": "Inject"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 240,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                    }
+                }
+            ]
+        }
+    ],
+    "dynamicValue": [
+        {
+            "path": "status",
+            "expression": {
+                "description": "set the status of the medication request",
+                "language": "text/cql.identifier",
+                "expression": "Med Req Status"
+            }
+        },
+        {
+            "path": "category",
+            "expression": {
+                "description": "set the category of the medication request",
+                "language": "text/cql.identifier",
+                "expression": "Med Req Category"
+            }
+        }
+    ]
+}
