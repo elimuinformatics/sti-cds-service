@@ -2,7 +2,6 @@ FROM maven:3.9.3-amazoncorretto-17 as build
 WORKDIR /usr/sti-cds-service/
 
 COPY *.xml /usr/sti-cds-service/
-# COPY settings.xml .
 # #RUN mvn -ntp dependency:go-offline
 
 COPY src/ /usr/sti-cds-service/src
