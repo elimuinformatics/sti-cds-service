@@ -1,8 +1,8 @@
 CONFIG_CLIENT_ID: config-api
 CONFIG_GRANT_TYPE: password
-CONFIG_PASSWORD: ${TESTPASS}
+CONFIG_PASSWORD: dummypass
 CONFIG_SCOPE: openid
-CONFIG_USERNAME: ${TESTUSER}
+CONFIG_USERNAME: dummyuser
 CONFIG_CLIENT_SECRET: asdf
 AUTH_SERVER_URL: https://oauth-test.com/auth/realms/product
 ENVIRONMENT: dev

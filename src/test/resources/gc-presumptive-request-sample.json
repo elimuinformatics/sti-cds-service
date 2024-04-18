@@ -1,6 +1,6 @@
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
-  "fhirServer": "https://fhir4-internal.elimuinformatics.com/fhir",
+  "fhirServer": "{{fhirBaseUrl}}",
   "hook": "order-sign",
   "fhirAuthorization": {
       "access_token": "{{oauth_token}}",
