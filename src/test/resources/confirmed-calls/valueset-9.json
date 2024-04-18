@@ -1,0 +1,72 @@
+{
+  "resourceType": "Bundle",
+  "id": "1385e01e-cb05-4a4a-8187-e043243690b6",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:27:01.122+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113762.1.4.1196.4469"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113762.1.4.1196.4469",
+    "resource": {
+      "resourceType": "ValueSet",
+      "id": "2.16.840.1.113762.1.4.1196.4469",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-08-31T00:32:24.105+00:00",
+        "source": "#xiBBJOfnrPoSm8lt"
+      },
+      "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4469",
+      "version": "Draft",
+      "name": "CabotegravirInjectable",
+      "status": "draft",
+      "compose": {
+        "inactive": true,
+        "include": [ {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "concept": [ {
+            "code": "2475408",
+            "display": "cabotegravir Injectable Product"
+          }, {
+            "code": "2475415",
+            "display": "{1 (3 ML cabotegravir 200 MG/ML Injection) / 1 (3 ML rilpivirine 300 MG/ML Injection) } Pack"
+          }, {
+            "code": "2475416",
+            "display": "{1 (3 ML cabotegravir 200 MG/ML Injection) / 1 (3 ML rilpivirine 300 MG/ML Injection) } Pack [CABENUVA 600 MG / 900 MG]"
+          }, {
+            "code": "2475417",
+            "display": "{1 (2 ML cabotegravir 200 MG/ML Injection) / 1 (2 ML rilpivirine 300 MG/ML Injection) } Pack"
+          }, {
+            "code": "2475418",
+            "display": "{1 (2 ML cabotegravir 200 MG/ML Injection) / 1 (2 ML rilpivirine 300 MG/ML Injection) } Pack [CABENUVA 400 MG / 600 MG]"
+          }, {
+            "code": "2588046",
+            "display": "Apretude Injectable Product"
+          }, {
+            "code": "2588076",
+            "display": "cabotegravir Injection"
+          }, {
+            "code": "2588077",
+            "display": "3 ML cabotegravir 200 MG/ML Injection"
+          }, {
+            "code": "2588079",
+            "display": "cabotegravir Injection [Apretude]"
+          }, {
+            "code": "2588080",
+            "display": "3 ML cabotegravir 200 MG/ML Injection [Apretude]"
+          }, {
+            "code": "2594978",
+            "display": "2 ML cabotegravir 200 MG/ML Injection"
+          } ]
+        } ]
+      }
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}

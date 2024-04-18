@@ -1,0 +1,68 @@
+{
+  "resourceType": "Bundle",
+  "id": "9b5ee338-c25c-45b3-88bd-0c0a0cbae6ea",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:54.567+00:00"
+  },
+  "type": "searchset",
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir4-test.com/r4/Observation?code=http%3A%2F%2Floinc.org%7C14092-1%2Chttp%3A%2F%2Floinc.org%7C16975-5%2Chttp%3A%2F%2Floinc.org%7C18396-2%2Chttp%3A%2F%2Floinc.org%7C24012-7%2Chttp%3A%2F%2Floinc.org%7C29893-5%2Chttp%3A%2F%2Floinc.org%7C30361-0%2Chttp%3A%2F%2Floinc.org%7C31201-7%2Chttp%3A%2F%2Floinc.org%7C33660-2%2Chttp%3A%2F%2Floinc.org%7C33806-1%2Chttp%3A%2F%2Floinc.org%7C33807-9%2Chttp%3A%2F%2Floinc.org%7C40732-0%2Chttp%3A%2F%2Floinc.org%7C40733-8%2Chttp%3A%2F%2Floinc.org%7C43009-0%2Chttp%3A%2F%2Floinc.org%7C43011-6%2Chttp%3A%2F%2Floinc.org%7C44873-8%2Chttp%3A%2F%2Floinc.org%7C5221-7%2Chttp%3A%2F%2Floinc.org%7C5222-5%2Chttp%3A%2F%2Floinc.org%7C5225-8%2Chttp%3A%2F%2Floinc.org%7C56888-1%2Chttp%3A%2F%2Floinc.org%7C7917-8%2Chttp%3A%2F%2Floinc.org%7C7918-6%2Chttp%3A%2F%2Floinc.org%7C7919-4%2Chttp%3A%2F%2Floinc.org%7C85686-4%2Chttp%3A%2F%2Floinc.org%7C86233-4%2Chttp%3A%2F%2Floinc.org%7C9821-0&subject=Patient%2F123457"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir4-internal.elimuinformatics.com/fhir/Observation/6636941",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "663694",
+      "meta": {
+        "versionId": "2",
+        "lastUpdated": "2023-09-14T22:21:25.000+00:00",
+        "source": "#pgL9nD2EBSmeUFg4"
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "14092-1",
+          "display": "HIV 1 Ab [Presence] in Serum by Immunofluorescence"
+        } ],
+        "text": "HIV 1 Ab [Presence] in Serum by Immunofluorescence"
+      },
+      "subject": {
+        "reference": "Patient/123457"
+      },
+      "effectiveDateTime": "2023-08-31T10:28:00+01:00",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "10828004",
+          "display": "Positive (qualifier value)"
+        } ],
+        "text": "Positive"
+      },
+      "interpretation": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "A",
+          "display": "Abnormal"
+        } ],
+        "text": "Abnormal"
+      } ],
+      "specimen": {
+        "reference": "Specimen/663693",
+        "display": "Specimen 663693"
+      }
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}
+

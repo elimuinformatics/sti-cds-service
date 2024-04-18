@@ -1,0 +1,160 @@
+{
+    "resourceType": "ValueSet",
+    "id": "2.16.840.1.113762.1.4.1196.4502",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/valueset-expansion-message",
+                "valueString": "ValueSet was expanded using an expansion that was pre-calculated at 2023-11-20T17:35:04.109+00:00 (149 days ago)"
+            }
+        ],
+        "versionId": "2"
+    },
+    "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4502",
+    "status": "active",
+    "compose": {
+        "inactive": true,
+        "include": [
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "concept": [
+                    {
+                        "code": "1152108",
+                        "display": "ceftriaxone Injectable Product"
+                    },
+                    {
+                        "code": "1664991",
+                        "display": "ceftriaxone 250 MG"
+                    },
+                    {
+                        "code": "1665004",
+                        "display": "ceftriaxone 500 MG"
+                    },
+                    {
+                        "code": "1665005",
+                        "display": "ceftriaxone 500 MG Injection"
+                    },
+                    {
+                        "code": "1665020",
+                        "display": "ceftriaxone 1000 MG"
+                    },
+                    {
+                        "code": "1665021",
+                        "display": "ceftriaxone 1000 MG Injection"
+                    },
+                    {
+                        "code": "1665045",
+                        "display": "ceftriaxone 2000 MG"
+                    },
+                    {
+                        "code": "1665046",
+                        "display": "ceftriaxone 2000 MG Injection"
+                    },
+                    {
+                        "code": "203172",
+                        "display": "ceftriaxone sodium"
+                    },
+                    {
+                        "code": "2193",
+                        "display": "ceftriaxone"
+                    },
+                    {
+                        "code": "309090",
+                        "display": "ceftriaxone 100 MG/ML Injectable Solution"
+                    },
+                    {
+                        "code": "309092",
+                        "display": "ceftriaxone 250 MG Injection"
+                    },
+                    {
+                        "code": "337560",
+                        "display": "ceftriaxone 100 MG/ML"
+                    }
+                ]
+            }
+        ]
+    },
+    "expansion": {
+        "identifier": "3f6141fd-692e-4787-8c83-6b9271406246",
+        "timestamp": "2024-04-17T19:26:14+00:00",
+        "total": 13,
+        "offset": 0,
+        "parameter": [
+            {
+                "name": "offset",
+                "valueInteger": 0
+            },
+            {
+                "name": "count",
+                "valueInteger": 1000
+            }
+        ],
+        "contains": [
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1152108",
+                "display": "ceftriaxone Injectable Product"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1664991",
+                "display": "ceftriaxone 250 MG"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665004",
+                "display": "ceftriaxone 500 MG"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665005",
+                "display": "ceftriaxone 500 MG Injection"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665020",
+                "display": "ceftriaxone 1000 MG"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665021",
+                "display": "ceftriaxone 1000 MG Injection"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665045",
+                "display": "ceftriaxone 2000 MG"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665046",
+                "display": "ceftriaxone 2000 MG Injection"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "203172",
+                "display": "ceftriaxone sodium"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "2193",
+                "display": "ceftriaxone"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "309090",
+                "display": "ceftriaxone 100 MG/ML Injectable Solution"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "309092",
+                "display": "ceftriaxone 250 MG Injection"
+            },
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "337560",
+                "display": "ceftriaxone 100 MG/ML"
+            }
+        ]
+    }
+}

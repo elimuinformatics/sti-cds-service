@@ -1,0 +1,111 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1196.1352",
+  "meta": {
+    "extension": [ {
+      "url": "http://hapifhir.io/fhir/StructureDefinition/valueset-expansion-message",
+      "valueString": "ValueSet was expanded using an expansion that was pre-calculated at 2023-12-16T04:33:27.688+00:00 (122 days ago)"
+    } ],
+    "versionId": "1"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.1352",
+  "status": "active",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "concept": [ {
+        "code": "18833-4",
+        "display": "First Body weight"
+      }, {
+        "code": "29463-7",
+        "display": "Body weight"
+      }, {
+        "code": "3141-9",
+        "display": "Body weight Measured"
+      }, {
+        "code": "3142-7",
+        "display": "Body weight Stated"
+      }, {
+        "code": "75292-3",
+        "display": "Body weight - Reported --usual"
+      }, {
+        "code": "79348-9",
+        "display": "Body weight --used for drug calculation"
+      }, {
+        "code": "8335-2",
+        "display": "Body weight Estimated"
+      }, {
+        "code": "8340-2",
+        "display": "Dry body weight Estimated"
+      }, {
+        "code": "8341-0",
+        "display": "Dry body weight Measured"
+      }, {
+        "code": "8350-1",
+        "display": "Body weight Measured --with clothes"
+      }, {
+        "code": "8351-9",
+        "display": "Body weight Measured --without clothes"
+      } ]
+    } ]
+  },
+  "expansion": {
+    "identifier": "e0caee9f-2daf-4ec0-a9fc-6fd5ab446ec9",
+    "timestamp": "2024-04-16T12:26:53+00:00",
+    "total": 11,
+    "offset": 0,
+    "parameter": [ {
+      "name": "offset",
+      "valueInteger": 0
+    }, {
+      "name": "count",
+      "valueInteger": 1000
+    } ],
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "18833-4",
+      "display": "First Body weight"
+    }, {
+      "system": "http://loinc.org",
+      "code": "29463-7",
+      "display": "Body weight"
+    }, {
+      "system": "http://loinc.org",
+      "code": "3141-9",
+      "display": "Body weight Measured"
+    }, {
+      "system": "http://loinc.org",
+      "code": "3142-7",
+      "display": "Body weight Stated"
+    }, {
+      "system": "http://loinc.org",
+      "code": "75292-3",
+      "display": "Body weight - Reported --usual"
+    }, {
+      "system": "http://loinc.org",
+      "code": "79348-9",
+      "display": "Body weight --used for drug calculation"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8335-2",
+      "display": "Body weight Estimated"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8340-2",
+      "display": "Dry body weight Estimated"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8341-0",
+      "display": "Dry body weight Measured"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8350-1",
+      "display": "Body weight Measured --with clothes"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8351-9",
+      "display": "Body weight Measured --without clothes"
+    } ]
+  }
+}
+

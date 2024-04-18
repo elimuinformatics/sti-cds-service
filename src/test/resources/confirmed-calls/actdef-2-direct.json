@@ -1,0 +1,51 @@
+{
+    "resourceType": "ActivityDefinition",
+    "id": "Ceftriaxone500OrderProposal",
+    "meta": {
+        "versionId": "25",
+        "lastUpdated": "2023-06-29T19:24:22.459+00:00",
+        "source": "#vmvswW8n0ZXGrARY"
+    },
+    "url": "http://elimu.io/ActivityDefinition/Ceftriaxone500OrderProposal",
+    "name": "Ceftriaxone500OrderProposal",
+    "title": "500 mg Intramuscular",
+    "status": "draft",
+    "description": "cefTRIAXone (ROCEPHIN) 500 mg IM",
+    "library": [
+        "http://elimu.io/Library/CDSHooksSupport"
+    ],
+    "kind": "MedicationRequest",
+    "intent": "proposal",
+    "productCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "1665005",
+                "display": "ceftriaxone 500 MG Injection"
+            },
+            {
+                "system": "urn:com.epic.cdshooks.action.code.system.preference-list-item",
+                "code": "2"
+            }
+        ],
+        "text": "ceftriaxone 500 MG Injection"
+    },
+    "dynamicValue": [
+        {
+            "path": "status",
+            "expression": {
+                "description": "set the status of the medication request",
+                "language": "text/cql.identifier",
+                "expression": "Med Req Status"
+            }
+        },
+        {
+            "path": "category",
+            "expression": {
+                "description": "set the category of the medication request",
+                "language": "text/cql.identifier",
+                "expression": "Med Req Category"
+            }
+        }
+    ]
+}

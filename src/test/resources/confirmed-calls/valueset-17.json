@@ -1,0 +1,135 @@
+{
+    "resourceType": "Bundle",
+    "id": "b12042c0-f676-4aee-b82b-12cf6ac42068",
+    "meta": {
+        "lastUpdated": "2024-04-17T14:26:51.825+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113762.1.4.1196.4466"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113762.1.4.1196.4466",
+            "resource": {
+                "resourceType": "ValueSet",
+                "id": "2.16.840.1.113762.1.4.1196.4466",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2023-08-10T00:17:35.882+00:00",
+                    "source": "#3uZ1M3DfWZKZ2xbc"
+                },
+                "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.4466",
+                "version": "Draft",
+                "name": "PharyngealSpecimens",
+                "title": "Pharyngeal Specimens",
+                "status": "draft",
+                "compose": {
+                    "inactive": true,
+                    "include": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "concept": [
+                                {
+                                    "code": "110907006",
+                                    "display": "Epiglottic cytologic material (specimen)"
+                                },
+                                {
+                                    "code": "110908001",
+                                    "display": "Laryngeal cytologic material (specimen)"
+                                },
+                                {
+                                    "code": "110909009",
+                                    "display": "Vocal cord cytologic material (specimen)"
+                                },
+                                {
+                                    "code": "1149105007",
+                                    "display": "Oropharyngeal washings (specimen)"
+                                },
+                                {
+                                    "code": "119389009",
+                                    "display": "Specimen from throat (specimen)"
+                                },
+                                {
+                                    "code": "128172000",
+                                    "display": "Tissue specimen from throat (specimen)"
+                                },
+                                {
+                                    "code": "16213851000119101",
+                                    "display": "Tissue specimen from larynx obtained by total resection (specimen)"
+                                },
+                                {
+                                    "code": "258411007",
+                                    "display": "Nasopharyngeal aspirate (specimen)"
+                                },
+                                {
+                                    "code": "258412000",
+                                    "display": "Oropharyngeal aspirate (specimen)"
+                                },
+                                {
+                                    "code": "28991000087102",
+                                    "display": "Swab from epiglottis (specimen)"
+                                },
+                                {
+                                    "code": "309182004",
+                                    "display": "Larynx biopsy specimen (specimen)"
+                                },
+                                {
+                                    "code": "309183009",
+                                    "display": "Laryngectomy specimen (specimen)"
+                                },
+                                {
+                                    "code": "309184003",
+                                    "display": "Vocal cord biopsy specimen (specimen)"
+                                },
+                                {
+                                    "code": "309192007",
+                                    "display": "Tonsillectomy specimen (specimen)"
+                                },
+                                {
+                                    "code": "430144001",
+                                    "display": "Specimen from larynx (specimen)"
+                                },
+                                {
+                                    "code": "430222001",
+                                    "display": "Specimen from tonsil (specimen)"
+                                },
+                                {
+                                    "code": "432865002",
+                                    "display": "Specimen from larynx obtained by fine needle aspiration biopsy (specimen)"
+                                },
+                                {
+                                    "code": "433801000124107",
+                                    "display": "Combined nasopharyngeal and oropharyngeal swab (specimen)"
+                                },
+                                {
+                                    "code": "447391001",
+                                    "display": "Specimen from pharynx obtained by aspiration (specimen)"
+                                },
+                                {
+                                    "code": "461911000124106",
+                                    "display": "Swab specimen from oropharynx (specimen)"
+                                },
+                                {
+                                    "code": "472867001",
+                                    "display": "Swab from tonsil (specimen)"
+                                },
+                                {
+                                    "code": "472888005",
+                                    "display": "Swab from larynx (specimen)"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+server:
+  address: 0.0.0.0
+kogito:
+  service:
+    url: http://localhost:8080
+quarkus:
+  log:
+    console:
+      json:
+        pretty-print: false
+      format: '%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) <%X{x-correlation-id}> %s%e%n'
+    min-level: DEBUG
+    category:
+      io.elimu:
+        level: DEBUG
+  http:
+    auth:
+      permission:
+        authenticated:
+          paths:  /*
+          policy: permit
+            #authenticated
+        public:
+          paths: /q/health/*, /q/metrics/*
+          policy: permit
+  oidc:
+    tenant-enabled: false
+  kogito:
+    devservices:
+      enabled: false
+
+io:
+  elimu:
+    log-scrubber:
+      values:
+        - (?i)(patient.*?([-=:]|\":)(.*?\b))(?:.*?[^ms]\S)(?:(\s+,|,|\")|$)
+        - (?i)(encounter.*?([-=:]|\":)(.*?\b))(?:.*?[^ms]\S)(?:(\s+,|,|\")|$)
+        - (?i)(refresh_token.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
+        - (?i)(id_token.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
+        - (?i)(access_token.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
+        - (?i)(\bauthorization.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
+        - (?i)(\bfhir_authorization.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
+        - (?i)(password.*?([-=:]|\":)(.*?\b))(?:.*?\S)(?:(\s+,|,|\")|$)
+      mask: $1****$4
+
+'%dev':
+  quarkus:
+    log:
+      console:
+        json: false
+        format: '%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c{3.}] (%t) <%X{x-correlation-id}> %s%e%n'
+
+configs:
+  procvar:
+    outputType: application/json
+    fhirServerUrl: ${FHIR_SERVER_URL}
+    fhirScope: ${CONFIG_SCOPE}
+    fhirTokenUrl: ${AUTH_SERVER_URL}/protocol/openid-connect/token
+    fhirClientId: ${FHIR_CLIENT_ID}
+    fhirGrantType: ${FHIR_GRANT_TYPE}
+    fhirUsername: ${FHIR_USERNAME}
+    fhirPassword: ${FHIR_PASSWORD}
+    jwtValidAud: ${VALID_AUD_LIST}
+    jwtValidIss: ${VALID_ISS_LIST}
+    jwtValidPresetKeys: ${VALID_PRESET_KEYS_LIST}
+    jwtValidJku: ${VALID_JKU_LIST}
+    fhirTerminologyServerUrl: ${FHIR_TERMINOLOGY_SERVER_URL}
+    organizationsHivFiltered: ${HIV_FHIR_SERVER_FILTER}

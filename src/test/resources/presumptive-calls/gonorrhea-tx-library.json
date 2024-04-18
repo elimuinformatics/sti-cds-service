@@ -1,0 +1,65 @@
+{
+    "resourceType": "Bundle",
+    "id": "cb74c4d5-f410-4874-90b1-cb6bce611b86",
+    "meta": {
+        "lastUpdated": "2024-04-17T19:11:56.982+00:00"
+    },
+    "type": "searchset",
+    "total": 2,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library?_elements=name%2Cversion&_format=json&name=GonorrheaTxCDS"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library/GonorrheaTxCDS",
+            "resource": {
+                "resourceType": "Library",
+                "id": "GonorrheaTxCDS",
+                "meta": {
+                    "versionId": "60",
+                    "lastUpdated": "2024-02-28T00:44:10.429+00:00",
+                    "source": "#7j2Sfo2UpgauBvKV",
+                    "tag": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+                            "code": "SUBSETTED",
+                            "display": "Resource encoded in summary mode"
+                        }
+                    ]
+                },
+                "version": "0.0.1",
+                "name": "GonorrheaTxCDS"
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library/GonorrheaTxCDS-UnitTest",
+            "resource": {
+                "resourceType": "Library",
+                "id": "GonorrheaTxCDS-UnitTest",
+                "meta": {
+                    "versionId": "5",
+                    "lastUpdated": "2023-06-09T13:44:19.409+00:00",
+                    "source": "#KCjYCp9ROQMNEmgi",
+                    "tag": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+                            "code": "SUBSETTED",
+                            "display": "Resource encoded in summary mode"
+                        }
+                    ]
+                },
+                "version": "0.0.1",
+                "name": "GonorrheaTxCDS-UnitTest"
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

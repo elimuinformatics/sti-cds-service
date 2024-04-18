@@ -1,0 +1,12 @@
+{
+  "resourceType": "Bundle",
+  "id": "0c475def-1436-499a-a560-e062c2c629cd",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:36.667+00:00"
+  },
+  "type": "searchset",
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir4-terminology-internal.elimuinformatics.com/fhir/Library?_elements=name%2Cversion&_format=json&name=FHIRHelpers"
+  } ]
+}

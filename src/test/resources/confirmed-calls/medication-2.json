@@ -1,0 +1,85 @@
+{
+  "resourceType": "Medication",
+  "id": "eGVdHiKbEpRO.9kB3xR",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-09-14T17:47:09.000+00:00",
+    "source": "#zDs6V1ZbsnSz84yo"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">cefTRIAXone (ROCEPHIN) INTRAMUSCULAR injection 500 mg</div></div>"
+  },
+  "identifier": [ {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.301.3.7.2.698288",
+    "value": "40814923"
+  } ],
+  "code": {
+    "coding": [ {
+      "system": "urn:oid:2.16.840.1.113883.6.208",
+      "code": "9166"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "2193"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "9449"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "203172"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "1665005"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "1665008"
+    } ],
+    "text": "cefTRIAXone (ROCEPHIN) INTRAMUSCULAR injection 500 mg"
+  },
+  "form": {
+    "coding": [ {
+      "system": "urn:oid:1.2.840.114350.1.13.301.3.7.4.698288.310",
+      "code": "SolR",
+      "display": "Recon Soln"
+    } ],
+    "text": "Recon Soln"
+  },
+  "ingredient": [ {
+    "itemCodeableConcept": {
+      "coding": [ {
+        "system": "urn:oid:2.16.840.1.113883.6.208",
+        "code": "9166"
+      }, {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "2193"
+      }, {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "9449"
+      }, {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "203172"
+      }, {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1665005"
+      }, {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1665008"
+      } ],
+      "text": "cefTRIAXone (ROCEPHIN) INTRAMUSCULAR injection 500 mg"
+    },
+    "strength": {
+      "numerator": {
+        "value": 500,
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+      },
+      "denominator": {
+        "value": 500,
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+      }
+    }
+  } ]
+}
+

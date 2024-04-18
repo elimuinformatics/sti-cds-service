@@ -1,0 +1,65 @@
+package io.elimu.kogito;
+
+import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Resource;
+import java.util.List;
+import java.util.ArrayList;
+import io.elimu.kogito.model.NamedDataObject;
+import java.util.Map;
+
+global Map inferences;
+
+rule "create empty list"
+ruleflow-group "extract-context-data"
+when
+    Bundle()
+then
+    List $list = new ArrayList<Resource>();
+    insert(new NamedDataObject("orderResources", $list));
+    inferences.put("orderResources", $list);
+    org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules").debug("Created empty list");
+end
+
+rule "obtain parameters from bundle - log1"
+ruleflow-group "extract-context-data"
+when
+    NamedDataObject(name=="orderResources", $resourceList: value#List)
+    NamedDataObject(name=="selectedOrders", $selectedOrders: value#List)
+then
+    org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules").debug("Selected orders size " + $selectedOrders.size());
+end
+
+rule "obtain parameters from bundle - log2"
+ruleflow-group "extract-context-data"
+when
+    NamedDataObject(name=="orderResources", $resourceList: value#List)
+    NamedDataObject(name=="selectedOrders", $selectedOrders: value#List)
+    $selectedOrder: String() from $selectedOrders
+then
+    org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules").debug("Selected order: " + io.elimu.kogito.util.RuleHelper.getResourceType($selectedOrder) + " " + io.elimu.kogito.util.RuleHelper.getResourceId($selectedOrder));
+end
+   
+rule "obtain parameters from bundle - log3"
+ruleflow-group "extract-context-data"
+when
+    Bundle($entry: this.getEntry(), $entry != null)
+    Bundle.BundleEntryComponent($resource: this.getResource() ) from $entry
+then
+    org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules").debug("Resource: " + $resource.getResourceType() + " " + $resource.getId());
+end
+
+rule "obtain parameters from bundle"
+ruleflow-group "extract-context-data"
+when
+    NamedDataObject(name=="orderResources", $resourceList: value#List)
+    NamedDataObject(name=="selectedOrders", $selectedOrders: value#List)
+    $selectedOrder: String() from $selectedOrders
+    Bundle($entry: this.getEntry(), $entry != null)
+    Bundle.BundleEntryComponent($resource: this.getResource() ) from $entry
+    Resource(id==$selectedOrder) from $resource
+then
+    $resourceList.add($resource);
+    org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-rules").debug("Added resource with id " + $resource.getId());
+end
+
+

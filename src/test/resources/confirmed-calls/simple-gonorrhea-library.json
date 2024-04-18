@@ -1,0 +1,35 @@
+{
+  "resourceType": "Bundle",
+  "id": "31a55998-d78e-414d-8f6e-61d7fca0631f",
+  "meta": {
+    "lastUpdated": "2024-04-16T12:26:33.221+00:00"
+  },
+  "type": "searchset",
+  "link": [ {
+    "relation": "self",
+    "url": "https://fhir4-terminology-internal.elimuinformatics.com/fhir/Library?_elements=name%2Cversion&_format=json&name=SimpleGonorrheaCDS2"
+  } ],
+  "entry": [ {
+    "fullUrl": "https://fhir4-terminology-internal.elimuinformatics.com/fhir/Library/12055",
+    "resource": {
+      "resourceType": "Library",
+      "id": "12055",
+      "meta": {
+        "versionId": "57",
+        "lastUpdated": "2023-02-15T21:53:23.777+00:00",
+        "source": "#Mq39iVIJS5c9bHDa",
+        "tag": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+          "code": "SUBSETTED",
+          "display": "Resource encoded in summary mode"
+        } ]
+      },
+      "version": "0.0.1",
+      "name": "SimpleGonorrheaCDS2"
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}
+
