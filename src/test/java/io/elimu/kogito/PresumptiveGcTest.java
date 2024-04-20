@@ -20,18 +20,14 @@ import io.restassured.response.Response;
 
 @QuarkusTest
 public class PresumptiveGcTest {
-    @ConfigProperty(name = "AUTH_SERVER_URL")
-    String authUrl;
-    @ConfigProperty(name = "FHIR_SERVER_URL")
-    String fhirUrl;
     @ConfigProperty(name = "FHIR_TERMINOLOGY_SERVER_URL")
     String fhirTermUrl;
 
     @Test
     @TestSecurity(authorizationEnabled = false)
     void testPresumptiveGCCards() throws IOException, URISyntaxException, InterruptedException {
+        String fhirUrl = "https://fhir-test.com/r4";
     	HttpClient client = new TestHttpClientBuilder().
-            expectCall("POST", authUrl + "/protocol/openid-connect/token", 200, getClass().getResource("/presumptive-calls/auth-token.json")).
             expectCall("GET", fhirTermUrl + "/PlanDefinition?url=http://elimu.io/PlanDefinition/GonorrheaCDSPresumptiveTreatment&_format=json", 200, getClass().getResource("/presumptive-calls/plan-def.json")).
             expectCall("GET", fhirTermUrl + "/Library?name=GonorrheaTxCDS&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/presumptive-calls/gonorrhea-tx-library.json")).
             expectCall("GET", fhirTermUrl + "/Library/GonorrheaTxCDS/_history/60?_format=json&_elements=name%2Ctype%2Cversion%2Ccontent", 200, getClass().getResource("/presumptive-calls/gonorrhea-tx-library-direct.json")).
@@ -91,7 +87,6 @@ public class PresumptiveGcTest {
     String transformData(String file, String text, String replaceWith) throws IOException {
         String content = new String(getClass().getResourceAsStream(file).readAllBytes());
         String retval = content.replaceAll(text, replaceWith);
-        org.slf4j.LoggerFactory.getLogger(ConfirmedGcTest.class).info("TRAANSFORMED DATA = " + retval);
         return retval;
     }
 

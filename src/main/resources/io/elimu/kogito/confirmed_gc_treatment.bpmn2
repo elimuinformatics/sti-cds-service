@@ -7,7 +7,6 @@
   <bpmn2:itemDefinition id="_bodyJsonItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_hookItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_fhirAuthTokenItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="_fhirTerminologyAuthTokenItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_fhirAuthorizationItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="_fhirClientSecretItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_fhirClientIdItem" structureRef="String"/>
@@ -50,7 +49,6 @@
   <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_patientIdInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerUrlInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_planDefinitionUrlInputXItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirTerminologyServerAuthInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerAuthInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_context_userIdInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__A9B560BC-9F30-4579-B642-ECB17AC610D1_context_patientIdInputXItem" structureRef="String"/>
@@ -122,13 +120,6 @@
       </bpmn2:extensionElements>
     </bpmn2:property>
     <bpmn2:property id="fhirAuthToken" itemSubjectRef="_fhirAuthTokenItem" name="fhirAuthToken">
-      <bpmn2:extensionElements>
-        <drools:metaData name="customTags">
-          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
-        </drools:metaData>
-      </bpmn2:extensionElements>
-    </bpmn2:property>
-    <bpmn2:property id="fhirTerminologyAuthToken" itemSubjectRef="_fhirTerminologyAuthTokenItem" name="fhirTerminologyAuthToken">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
           <drools:metaValue><![CDATA[internal]]></drools:metaValue>
@@ -590,12 +581,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.ConfirmedGcTreatment").info("
       kcontext.setVariable("fhirAuthToken", "Bearer " + authFromHookReq.getAccessToken());
       org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debug("Extracted auth token for fhir server: " + authFromHookReq.getAccessToken().substring(0,6));
   }
-
-  // java.lang.String url = (String)kcontext.getVariable("fhir4TerServer");
-  String auth = io.elimu.kogito.util.AuthHelper.getAuthToken(fhirTokenUrl, fhirScope, fhirClientId, fhirClientSecret, fhirGrantType, fhirUsername, fhirPassword);
-  kcontext.setVariable("fhirTerminologyAuthToken", "Bearer " + auth);
-  org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debug("Generated auth token for terminology server " + auth);
-
 org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debug("Invoking plan def evaluation");
 org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debug("Selected order resources is " + kcontext.getVariable("selectedOrderResources"));
 </bpmn2:script>
@@ -629,7 +614,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debu
         <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_patientIdInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_patientIdInputXItem" name="patientId"/>
         <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerUrlInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerUrlInputXItem" name="fhirServerUrl"/>
         <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_planDefinitionUrlInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_planDefinitionUrlInputXItem" name="planDefinitionUrl"/>
-        <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirTerminologyServerAuthInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirTerminologyServerAuthInputXItem" name="fhirTerminologyServerAuth"/>
         <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerAuthInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerAuthInputXItem" name="fhirServerAuth"/>
         <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_context_userIdInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_context_userIdInputXItem" name="context_userId"/>
         <bpmn2:dataInput id="_A9B560BC-9F30-4579-B642-ECB17AC610D1_context_patientIdInputX" drools:dtype="String" itemSubjectRef="__A9B560BC-9F30-4579-B642-ECB17AC610D1_context_patientIdInputXItem" name="context_patientId"/>
@@ -647,7 +631,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debu
           <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_patientIdInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerUrlInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_planDefinitionUrlInputX</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirTerminologyServerAuthInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirServerAuthInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_context_userIdInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A9B560BC-9F30-4579-B642-ECB17AC610D1_context_patientIdInputX</bpmn2:dataInputRefs>
@@ -682,10 +665,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-confirmed-treatment").debu
           <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[http://elimu.io/PlanDefinition/GonorrheaCDSLaboratoryConfirmed]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_A9B560BC-9F30-4579-B642-ECB17AC610D1_planDefinitionUrlInputX]]></bpmn2:to>
         </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation>
-        <bpmn2:sourceRef>fhirTerminologyAuthToken</bpmn2:sourceRef>
-        <bpmn2:targetRef>_A9B560BC-9F30-4579-B642-ECB17AC610D1_fhirTerminologyServerAuthInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation>
         <bpmn2:sourceRef>fhirAuthToken</bpmn2:sourceRef>
