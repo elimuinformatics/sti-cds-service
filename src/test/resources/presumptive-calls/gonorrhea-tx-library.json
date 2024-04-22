@@ -9,12 +9,12 @@
     "link": [
         {
             "relation": "self",
-            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library?_elements=name%2Cversion&_format=json&name=GonorrheaTxCDS"
+            "url": "https://fhir4-test-terminology.com/r4/Library?_elements=name%2Cversion&_format=json&name=GonorrheaTxCDS"
         }
     ],
     "entry": [
         {
-            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library/GonorrheaTxCDS",
+            "fullUrl": "https://fhir4-test-terminology.com/r4/Library/GonorrheaTxCDS",
             "resource": {
                 "resourceType": "Library",
                 "id": "GonorrheaTxCDS",
@@ -38,7 +38,7 @@
             }
         },
         {
-            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/Library/GonorrheaTxCDS-UnitTest",
+            "fullUrl": "https://fhir4-test-terminology.com/r4/Library/GonorrheaTxCDS-UnitTest",
             "resource": {
                 "resourceType": "Library",
                 "id": "GonorrheaTxCDS-UnitTest",

@@ -7,10 +7,10 @@
   "type": "searchset",
   "link": [ {
     "relation": "self",
-    "url": "https://fhir4-internal.elimuinformatics.com/fhir/Observation?code=http%3A%2F%2Floinc.org%7C24111-7%2Chttp%3A%2F%2Floinc.org%7C29311-8%2Chttp%3A%2F%2Floinc.org%7C31906-1%2Chttp%3A%2F%2Floinc.org%7C36902-5%2Chttp%3A%2F%2Floinc.org%7C43305-2%2Chttp%3A%2F%2Floinc.org%7C43403-5%2Chttp%3A%2F%2Floinc.org%7C43406-8%2Chttp%3A%2F%2Floinc.org%7C45073-4%2Chttp%3A%2F%2Floinc.org%7C45076-7%2Chttp%3A%2F%2Floinc.org%7C5028-6%2Chttp%3A%2F%2Floinc.org%7C698-1%2Chttp%3A%2F%2Floinc.org%7C91781-5%2Chttp%3A%2F%2Floinc.org%7C36903-3%2Chttp%3A%2F%2Floinc.org%7C43405-0&subject=Patient%2F123457"
+    "url": "https://fhir-test.com/r4/Observation?code=http%3A%2F%2Floinc.org%7C24111-7%2Chttp%3A%2F%2Floinc.org%7C29311-8%2Chttp%3A%2F%2Floinc.org%7C31906-1%2Chttp%3A%2F%2Floinc.org%7C36902-5%2Chttp%3A%2F%2Floinc.org%7C43305-2%2Chttp%3A%2F%2Floinc.org%7C43403-5%2Chttp%3A%2F%2Floinc.org%7C43406-8%2Chttp%3A%2F%2Floinc.org%7C45073-4%2Chttp%3A%2F%2Floinc.org%7C45076-7%2Chttp%3A%2F%2Floinc.org%7C5028-6%2Chttp%3A%2F%2Floinc.org%7C698-1%2Chttp%3A%2F%2Floinc.org%7C91781-5%2Chttp%3A%2F%2Floinc.org%7C36903-3%2Chttp%3A%2F%2Floinc.org%7C43405-0&subject=Patient%2F123457"
   } ],
   "entry": [ {
-    "fullUrl": "https://fhir4-internal.elimuinformatics.com/fhir/Observation/663694",
+    "fullUrl": "https://fhir-test.com/r4/Observation/663694",
     "resource": {
       "resourceType": "Observation",
       "id": "663694",

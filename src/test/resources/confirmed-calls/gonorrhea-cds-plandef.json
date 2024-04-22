@@ -8,10 +8,10 @@
   "total": 1,
   "link": [ {
     "relation": "self",
-    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition?_format=json&url=http%3A%2F%2Felimu.io%2FPlanDefinition%2FGonorrheaCDSLaboratoryConfirmed"
+    "url": "https://fhir4-test-terminology.com/r4/PlanDefinition?_format=json&url=http%3A%2F%2Felimu.io%2FPlanDefinition%2FGonorrheaCDSLaboratoryConfirmed"
   } ],
   "entry": [ {
-    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition/GonorrheaCDSLaboratoryConfirmed",
+    "fullUrl": "https://fhir4-test-terminology.com/r4/PlanDefinition/GonorrheaCDSLaboratoryConfirmed",
     "resource": {
       "resourceType": "PlanDefinition",
       "id": "GonorrheaCDSLaboratoryConfirmed",

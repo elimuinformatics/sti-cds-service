@@ -20,18 +20,14 @@ import io.restassured.response.Response;
 
 @QuarkusTest
 public class PresumptiveGcTest {
-    @ConfigProperty(name = "AUTH_SERVER_URL")
-    String authUrl;
-    @ConfigProperty(name = "FHIR_SERVER_URL")
-    String fhirUrl;
     @ConfigProperty(name = "FHIR_TERMINOLOGY_SERVER_URL")
     String fhirTermUrl;
 
     @Test
     @TestSecurity(authorizationEnabled = false)
     void testPresumptiveGCCards() throws IOException, URISyntaxException, InterruptedException {
+        String fhirUrl = "https://fhir-test.com/r4";
     	HttpClient client = new TestHttpClientBuilder().
-            expectCall("POST", authUrl + "/protocol/openid-connect/token", 200, getClass().getResource("/presumptive-calls/auth-token.json")).
             expectCall("GET", fhirTermUrl + "/PlanDefinition?url=http://elimu.io/PlanDefinition/GonorrheaCDSPresumptiveTreatment&_format=json", 200, getClass().getResource("/presumptive-calls/plan-def.json")).
             expectCall("GET", fhirTermUrl + "/Library?name=GonorrheaTxCDS&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/presumptive-calls/gonorrhea-tx-library.json")).
             expectCall("GET", fhirTermUrl + "/Library/GonorrheaTxCDS/_history/60?_format=json&_elements=name%2Ctype%2Cversion%2Ccontent", 200, getClass().getResource("/presumptive-calls/gonorrhea-tx-library-direct.json")).
@@ -62,8 +58,7 @@ public class PresumptiveGcTest {
             expectCall("GET", fhirTermUrl + "/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal/_history/5", 200, getClass().getResource("/presumptive-calls/act-def-500-direct.json")).
             expectCall("GET", fhirTermUrl + "/Library?name=CDSHooksSupport&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/presumptive-calls/cds-hooks-support-library.json")).
             expectCall("GET", fhirTermUrl + "/Library/CDSHooksSupport/_history/1?_format=json&_elements=name%2Ctype%2Cversion%2Ccontent", 200, getClass().getResource("/presumptive-calls/cds-hooks-support-library-direct.json")).
-            expectCall("GET", "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/presumptive-calls/act-def-2400.json")).
-            expectCall("GET", "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Gentamicin240OrderProposal/_history/13", 200, getClass().getResource("/presumptive-calls/act-def-2400-direct.json")).
+            expectCall("GET", fhirTermUrl + "/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/presumptive-calls/act-def-2400.json")).
             expectCall("GET", fhirTermUrl + "/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/presumptive-calls/actdef-3.json")).
             expectCall("GET", fhirTermUrl + "/ActivityDefinition/Gentamicin240OrderProposal/_history/13", 200, getClass().getResource("/presumptive-calls/actdef-3-direct.json")).
             expectCall("GET", fhirTermUrl + "/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FAzithromycin2GmOrderProposal", 200, getClass().getResource("/presumptive-calls/actdef-4.json")).
@@ -91,7 +86,6 @@ public class PresumptiveGcTest {
     String transformData(String file, String text, String replaceWith) throws IOException {
         String content = new String(getClass().getResourceAsStream(file).readAllBytes());
         String retval = content.replaceAll(text, replaceWith);
-        org.slf4j.LoggerFactory.getLogger(ConfirmedGcTest.class).info("TRAANSFORMED DATA = " + retval);
         return retval;
     }
 

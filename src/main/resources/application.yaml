@@ -53,13 +53,6 @@ io:
 configs:
   procvar:
     outputType: application/json
-    fhirServerUrl: ${FHIR_SERVER_URL}
-    fhirScope: ${CONFIG_SCOPE}
-    fhirTokenUrl: ${AUTH_SERVER_URL}/protocol/openid-connect/token
-    fhirClientId: ${FHIR_CLIENT_ID}
-    fhirGrantType: ${FHIR_GRANT_TYPE}
-    fhirUsername: ${FHIR_USERNAME}
-    fhirPassword: ${FHIR_PASSWORD}
     jwtValidAud: ${VALID_AUD_LIST}
     jwtValidIss: ${VALID_ISS_LIST}
     jwtValidPresetKeys: ${VALID_PRESET_KEYS_LIST}

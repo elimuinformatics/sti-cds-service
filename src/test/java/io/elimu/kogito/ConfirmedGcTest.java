@@ -22,18 +22,14 @@ import io.restassured.response.Response;
 
 @QuarkusTest
 public class ConfirmedGcTest {
-    @ConfigProperty(name = "AUTH_SERVER_URL")
-    String authUrl;
-    @ConfigProperty(name = "FHIR_SERVER_URL")
-    String fhirUrl;
     @ConfigProperty(name = "FHIR_TERMINOLOGY_SERVER_URL")
     String fhirTermUrl;
 
     @Test
     @TestSecurity(authorizationEnabled = false)
     void testConfirmedGCCards() throws IOException, URISyntaxException, InterruptedException {
+        String fhirUrl = "https://fhir-test.com/r4";
     	HttpClient client = new TestHttpClientBuilder().
-            expectCall("POST", authUrl + "/protocol/openid-connect/token", 200, getClass().getResource("/confirmed-calls/auth-token.json")).
             expectCall("GET", fhirTermUrl + "/PlanDefinition/12056?_format=json", 200, getClass().getResource("/confirmed-calls/plan-def.json")).
             expectCall("GET", fhirTermUrl + "/Library?name=SimpleGonorrheaCDS2&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/confirmed-calls/simple-gonorrhea-library.json")).
             expectCall("GET", fhirTermUrl + "/Library/12055/_history/57?_format=json&_elements=name%2Ctype%2Cversion%2Ccontent", 200, getClass().getResource("/confirmed-calls/simple-gonorrhea-library-direct.json")).
@@ -100,7 +96,6 @@ public class ConfirmedGcTest {
     String transformData(String file, String text, String replaceWith) throws IOException {
 	String content = new String(getClass().getResourceAsStream(file).readAllBytes());
 	String retval = content.replaceAll(text, replaceWith);
-	org.slf4j.LoggerFactory.getLogger(ConfirmedGcTest.class).info("TRAANSFORMED DATA = " + retval);
 	return retval;
     }
 }

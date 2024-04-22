@@ -9,12 +9,12 @@
     "link": [
         {
             "relation": "self",
-            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition?_format=json&url=http%3A%2F%2Felimu.io%2FPlanDefinition%2FGonorrheaCDSPresumptiveTreatment"
+            "url": "https://fhir4-test-terminology.com/r4/PlanDefinition?_format=json&url=http%3A%2F%2Felimu.io%2FPlanDefinition%2FGonorrheaCDSPresumptiveTreatment"
         }
     ],
     "entry": [
         {
-            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition/GonorrheaCDSPresumptiveTreatment",
+            "fullUrl": "https://fhir4-test-terminology.com/r4/PlanDefinition/GonorrheaCDSPresumptiveTreatment",
             "resource": {
                 "resourceType": "PlanDefinition",
                 "id": "GonorrheaCDSPresumptiveTreatment",
@@ -359,7 +359,7 @@
             }
         },
         {
-            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/PlanDefinition/GonorrheaCDSPresumptiveTreatment-UnitTest",
+            "fullUrl": "https://fhir4-test-terminology.com/r4/PlanDefinition/GonorrheaCDSPresumptiveTreatment-UnitTest",
             "resource": {
                 "resourceType": "PlanDefinition",
                 "id": "GonorrheaCDSPresumptiveTreatment-UnitTest",
