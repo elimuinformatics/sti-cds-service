@@ -9,12 +9,12 @@
     "link": [
         {
             "relation": "self",
-            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.464.1003.120.12.1003"
+            "url": "https://fhir4-test-terminology.com/r4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.464.1003.120.12.1003"
         }
     ],
     "entry": [
         {
-            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1003",
+            "fullUrl": "https://fhir4-test-terminology.com/r4/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1003",
             "resource": {
                 "resourceType": "ValueSet",
                 "id": "2.16.840.1.113883.3.464.1003.120.12.1003",

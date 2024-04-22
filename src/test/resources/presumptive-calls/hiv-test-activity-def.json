@@ -8,10 +8,10 @@
   "total": 1,
   "link": [ {
     "relation": "self",
-    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FHIVTestOrderProposal"
+    "url": "https://fhir4-test-terminology.com/r4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FHIVTestOrderProposal"
   } ],
   "entry": [ {
-    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/HIVTestOrderProposal",
+    "fullUrl": "https://fhir4-test-terminology.com/r4/ActivityDefinition/HIVTestOrderProposal",
     "resource": {
       "resourceType": "ActivityDefinition",
       "id": "HIVTestOrderProposal",

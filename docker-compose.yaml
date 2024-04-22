@@ -12,7 +12,7 @@ services:
       VALID_ISS_LIST: ""
       VALID_PRESET_KEYS_LIST: ""
       VALID_JKU_LIST: ""
-      FHIR_TERMINOLOGY_SERVER_URL: https://fhir4-terminology-sandbox-internal.elimuinformatics.com/baseR4
+      FHIR_TERMINOLOGY_SERVER_URL: https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4
       HIV_FHIR_SERVER_FILTER: ""
       KBASE_NAME: gc_sti_cdshoooks
 

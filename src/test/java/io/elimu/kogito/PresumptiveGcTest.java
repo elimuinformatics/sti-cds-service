@@ -58,8 +58,7 @@ public class PresumptiveGcTest {
             expectCall("GET", fhirTermUrl + "/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal/_history/5", 200, getClass().getResource("/presumptive-calls/act-def-500-direct.json")).
             expectCall("GET", fhirTermUrl + "/Library?name=CDSHooksSupport&_format=json&_elements=name%2Cversion", 200, getClass().getResource("/presumptive-calls/cds-hooks-support-library.json")).
             expectCall("GET", fhirTermUrl + "/Library/CDSHooksSupport/_history/1?_format=json&_elements=name%2Ctype%2Cversion%2Ccontent", 200, getClass().getResource("/presumptive-calls/cds-hooks-support-library-direct.json")).
-            expectCall("GET", "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/presumptive-calls/act-def-2400.json")).
-            expectCall("GET", "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Gentamicin240OrderProposal/_history/13", 200, getClass().getResource("/presumptive-calls/act-def-2400-direct.json")).
+            expectCall("GET", fhirTermUrl + "/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/presumptive-calls/act-def-2400.json")).
             expectCall("GET", fhirTermUrl + "/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FGentamicin240OrderProposal", 200, getClass().getResource("/presumptive-calls/actdef-3.json")).
             expectCall("GET", fhirTermUrl + "/ActivityDefinition/Gentamicin240OrderProposal/_history/13", 200, getClass().getResource("/presumptive-calls/actdef-3-direct.json")).
             expectCall("GET", fhirTermUrl + "/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FAzithromycin2GmOrderProposal", 200, getClass().getResource("/presumptive-calls/actdef-4.json")).

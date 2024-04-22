@@ -8,10 +8,10 @@
   "total": 1,
   "link": [ {
     "relation": "self",
-    "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2FGonorrheaTestsUnspecSite"
+    "url": "https://fhir4-test-terminology.com/r4/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2FGonorrheaTestsUnspecSite"
   } ],
   "entry": [ {
-    "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ValueSet/GonorrheaTestsUnspecSite",
+    "fullUrl": "https://fhir4-test-terminology.com/r4/ValueSet/GonorrheaTestsUnspecSite",
     "resource": {
       "resourceType": "ValueSet",
       "id": "GonorrheaTestsUnspecSite",

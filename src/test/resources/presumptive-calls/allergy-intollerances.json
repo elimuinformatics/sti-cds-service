@@ -7,10 +7,10 @@
   "type": "searchset",
   "link": [ {
     "relation": "self",
-    "url": "https://fhir4-internal.elimuinformatics.com/fhir/AllergyIntolerance?patient=Patient%2F754321"
+    "url": "https://fhir-test.com/r4/AllergyIntolerance?patient=Patient%2F754321"
   } ],
   "entry": [ {
-    "fullUrl": "https://fhir4-internal.elimuinformatics.com/fhir/AllergyIntolerance/627514",
+    "fullUrl": "https://fhir-test.com/r4/AllergyIntolerance/627514",
     "resource": {
       "resourceType": "AllergyIntolerance",
       "id": "627514",

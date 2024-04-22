@@ -7,7 +7,7 @@
   "type": "searchset",
   "link": [ {
     "relation": "self",
-    "url": "https://fhir4-internal.elimuinformatics.com/fhir/Condition?subject=Patient%2F754321"
+    "url": "https://fhir-test.com/r4/Condition?subject=Patient%2F754321"
   } ],
   "entry": [
   { 

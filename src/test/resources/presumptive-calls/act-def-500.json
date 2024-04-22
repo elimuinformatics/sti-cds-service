@@ -9,12 +9,12 @@
     "link": [
         {
             "relation": "self",
-            "url": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FCeftriaxone500NoLidoOrderProposal"
+            "url": "https://fhir4-test-terminology.com/r4/ActivityDefinition?url=http%3A%2F%2Felimu.io%2FActivityDefinition%2FCeftriaxone500NoLidoOrderProposal"
         }
     ],
     "entry": [
         {
-            "fullUrl": "https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal",
+            "fullUrl": "https://fhir4-test-terminology.com/r4/ActivityDefinition/Ceftriaxone500NoLidoOrderProposal",
             "resource": {
                 "resourceType": "ActivityDefinition",
                 "id": "Ceftriaxone500NoLidoOrderProposal",
