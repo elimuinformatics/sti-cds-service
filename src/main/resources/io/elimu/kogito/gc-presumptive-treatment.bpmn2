@@ -18,11 +18,11 @@
   <bpmn2:itemDefinition id="_userIdItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_encounterIdItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_epicClientIDItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="_mixpanelOrgIdItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="_mixpanelOrgNameItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_orgIdItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_orgNameItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_hashedPatientIdItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_planDefinitionUrlItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="_mixpanelAppNameItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_appNameItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_organizationsHivFilteredItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_cardsItem" structureRef="java.util.List"/>
   <bpmn2:itemDefinition id="_outcomeItem" structureRef="java.util.Map"/>
@@ -73,8 +73,20 @@
     <bpmn2:participant id="_A05BD0F2-7744-4980-8B17-8AF1DA3CC9A7" name="Pool Participant" processRef="presumptive_gc_treatment"/>
   </bpmn2:collaboration>
   <bpmn2:process id="presumptive_gc_treatment" drools:packageName="io.elimu.kogito" drools:version="1.0" drools:adHoc="false" name="Presumptive Treatment for Gonococcal Infection" isExecutable="true" processType="Public">
-    <bpmn2:property id="cardsJson" itemSubjectRef="_cardsJsonItem" name="cardsJson"/>
-    <bpmn2:property id="patientId" itemSubjectRef="_patientIdItem" name="patientId"/>
+    <bpmn2:property id="cardsJson" itemSubjectRef="_cardsJsonItem" name="cardsJson">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="patientId" itemSubjectRef="_patientIdItem" name="patientId">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
     <bpmn2:property id="fhirServerUrl" itemSubjectRef="_fhirServerUrlItem" name="fhirServerUrl">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
@@ -82,11 +94,41 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
-    <bpmn2:property id="fhirTerminologyServerUrl" itemSubjectRef="_fhirTerminologyServerUrlItem" name="fhirTerminologyServerUrl"/>
-    <bpmn2:property id="cqlResults" itemSubjectRef="_cqlResultsItem" name="cqlResults"/>
-    <bpmn2:property id="outBody" itemSubjectRef="_outBodyItem" name="outBody"/>
-    <bpmn2:property id="bodyJson" itemSubjectRef="_bodyJsonItem" name="bodyJson"/>
-    <bpmn2:property id="cdsHookRequest" itemSubjectRef="_cdsHookRequestItem" name="cdsHookRequest"/>
+    <bpmn2:property id="fhirTerminologyServerUrl" itemSubjectRef="_fhirTerminologyServerUrlItem" name="fhirTerminologyServerUrl">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="cqlResults" itemSubjectRef="_cqlResultsItem" name="cqlResults">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="outBody" itemSubjectRef="_outBodyItem" name="outBody">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="bodyJson" itemSubjectRef="_bodyJsonItem" name="bodyJson">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="cdsHookRequest" itemSubjectRef="_cdsHookRequestItem" name="cdsHookRequest">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
     <bpmn2:property id="hook" itemSubjectRef="_hookItem" name="hook">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
@@ -94,11 +136,41 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
-    <bpmn2:property id="fhirAuthToken" itemSubjectRef="_fhirAuthTokenItem" name="fhirAuthToken"/>
-    <bpmn2:property id="fhirAuthorization" itemSubjectRef="_fhirAuthorizationItem" name="fhirAuthorization"/>
-    <bpmn2:property id="draftOrders" itemSubjectRef="_draftOrdersItem" name="draftOrders"/>
-    <bpmn2:property id="selections" itemSubjectRef="_selectionsItem" name="selections"/>
-    <bpmn2:property id="selectedOrderResources" itemSubjectRef="_selectedOrderResourcesItem" name="selectedOrderResources"/>
+    <bpmn2:property id="fhirAuthToken" itemSubjectRef="_fhirAuthTokenItem" name="fhirAuthToken">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="fhirAuthorization" itemSubjectRef="_fhirAuthorizationItem" name="fhirAuthorization">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[input]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="draftOrders" itemSubjectRef="_draftOrdersItem" name="draftOrders">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="selections" itemSubjectRef="_selectionsItem" name="selections">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="selectedOrderResources" itemSubjectRef="_selectedOrderResourcesItem" name="selectedOrderResources">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
     <bpmn2:property id="hookInstance" itemSubjectRef="_hookInstanceItem" name="hookInstance">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
@@ -113,14 +185,62 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
-    <bpmn2:property id="encounterId" itemSubjectRef="_encounterIdItem" name="encounterId"/>
-    <bpmn2:property id="epicClientID" itemSubjectRef="_epicClientIDItem" name="epicClientID"/>
-    <bpmn2:property id="mixpanelOrgId" itemSubjectRef="_mixpanelOrgIdItem" name="mixpanelOrgId"/>
-    <bpmn2:property id="mixpanelOrgName" itemSubjectRef="_mixpanelOrgNameItem" name="mixpanelOrgName"/>
-    <bpmn2:property id="hashedPatientId" itemSubjectRef="_hashedPatientIdItem" name="hashedPatientId"/>
-    <bpmn2:property id="planDefinitionUrl" itemSubjectRef="_planDefinitionUrlItem" name="planDefinitionUrl"/>
-    <bpmn2:property id="mixpanelAppName" itemSubjectRef="_mixpanelAppNameItem" name="mixpanelAppName"/>
-    <bpmn2:property id="organizationsHivFiltered" itemSubjectRef="_organizationsHivFilteredItem" name="organizationsHivFiltered"/>
+    <bpmn2:property id="encounterId" itemSubjectRef="_encounterIdItem" name="encounterId">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="epicClientID" itemSubjectRef="_epicClientIDItem" name="epicClientID">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="orgId" itemSubjectRef="_orgIdItem" name="orgId">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="orgName" itemSubjectRef="_orgNameItem" name="orgName">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="hashedPatientId" itemSubjectRef="_hashedPatientIdItem" name="hashedPatientId">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="planDefinitionUrl" itemSubjectRef="_planDefinitionUrlItem" name="planDefinitionUrl">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="appName" itemSubjectRef="_appNameItem" name="appName">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="organizationsHivFiltered" itemSubjectRef="_organizationsHivFilteredItem" name="organizationsHivFiltered">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[internal]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
     <bpmn2:property id="cards" itemSubjectRef="_cardsItem" name="cards">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
@@ -312,7 +432,7 @@ log2.info(prefix + " - CDS request received");</bpmn2:script>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation>
-        <bpmn2:sourceRef>mixpanelOrgName</bpmn2:sourceRef>
+        <bpmn2:sourceRef>orgName</bpmn2:sourceRef>
         <bpmn2:targetRef>_FB1F77B7-51C1-498F-9CC5-D9364C853F98_namedfact_orgNameInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation>
@@ -342,12 +462,11 @@ log2.info(prefix + " - CDS request received");</bpmn2:script>
       <bpmn2:incoming>_207B7603-7B14-4512-9E58-B632F4EB904D</bpmn2:incoming>
       <bpmn2:outgoing>_DEE85459-0CED-4AFE-B685-9A4E056204B5</bpmn2:outgoing>
       <bpmn2:script>  // Extract token from fhirAuthorization
-  io.elimu.kogito.model.FHIRAuthorization authFromHookReq =
-    (io.elimu.kogito.model.FHIRAuthorization)(kcontext.getVariable("fhirAuthorization"));
-  if (authFromHookReq != null) {
-      kcontext.setVariable("fhirAuthToken", "Bearer " + authFromHookReq.getAccessToken());
-      org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("Extracted auth token for fhir server: " + authFromHookReq.getAccessToken().substring(0,6));
-  }
+java.util.Map authFromHookReq = (java.util.Map)(kcontext.getVariable("fhirAuthorization"));
+if (authFromHookReq != null &amp;&amp; authFromHookReq.containsKey("access_token")) {
+  kcontext.setVariable("fhirAuthToken", "Bearer " + authFromHookReq.get("access_token"));
+  org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("Extracted auth token for fhir server: " + authFromHookReq.get("access_token").toString().substring(0,6));
+}
 
 org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("Invoking plan def evaluation");
 org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("Selected order resources is " + kcontext.getVariable("selectedOrderResources"));
@@ -519,7 +638,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("
         <bpmn2:dataInput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
         <bpmn2:dataOutput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirServerOutputX" drools:dtype="String" itemSubjectRef="__10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirServerOutputXItem" name="fhirServer"/>
         <bpmn2:dataOutput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_patientIdOutputX" drools:dtype="java.lang.Object" itemSubjectRef="__10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_patientIdOutputXItem" name="context_patientId"/>
-        <bpmn2:dataOutput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirAuthorizationOutputX" drools:dtype="java.lang.Object" itemSubjectRef="__10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirAuthorizationOutputXItem" name="fhirAuthorization"/>
         <bpmn2:dataOutput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_contextResource_draftOrdersOutputX" drools:dtype="Object" itemSubjectRef="__10DCE6CA-714E-4B17-91DD-9613054AAFBB_contextResource_draftOrdersOutputXItem" name="contextResource_draftOrders"/>
         <bpmn2:dataOutput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_selectionsOutputX" drools:dtype="Object" itemSubjectRef="__10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_selectionsOutputXItem" name="context_selections"/>
         <bpmn2:dataOutput id="_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_encounterIdOutputX" drools:dtype="String" itemSubjectRef="__10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_encounterIdOutputXItem" name="context_encounterId"/>
@@ -536,7 +654,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("
         <bpmn2:outputSet>
           <bpmn2:dataOutputRefs>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirServerOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_patientIdOutputX</bpmn2:dataOutputRefs>
-          <bpmn2:dataOutputRefs>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirAuthorizationOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_contextResource_draftOrdersOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_selectionsOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_encounterIdOutputX</bpmn2:dataOutputRefs>
@@ -584,10 +701,6 @@ org.slf4j.LoggerFactory.getLogger("io.elimu.kogito.gc-presumptive-test").debug("
       <bpmn2:dataOutputAssociation>
         <bpmn2:sourceRef>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_context_patientIdOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>patientId</bpmn2:targetRef>
-      </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation>
-        <bpmn2:sourceRef>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_fhirAuthorizationOutputX</bpmn2:sourceRef>
-        <bpmn2:targetRef>fhirAuthorization</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
       <bpmn2:dataOutputAssociation>
         <bpmn2:sourceRef>_10DCE6CA-714E-4B17-91DD-9613054AAFBB_contextResource_draftOrdersOutputX</bpmn2:sourceRef>
