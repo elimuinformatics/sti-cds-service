@@ -59,3 +59,18 @@ configs:
     jwtValidJku: ${VALID_JKU_LIST}
     fhirTerminologyServerUrl: ${FHIR_TERMINOLOGY_SERVER_URL}
     organizationsHivFiltered: ${HIV_FHIR_SERVER_FILTER}
+discovery:
+  confirmed_gc_treatment:
+    id: confirmed_gc_treatment
+    title: 'CDS for Confirmed Treatment of Gonorrhea'
+    description: 'CDS for confirmed treatment of gonorrhea'
+    hook: 'patient-view'
+    prefetch:
+      patient: 'Patient/{{context.patientId}}'
+  presumptive_gc_treatment:
+   id: presumptive_gc_treatment,
+   title": 'CDS for Presumptive Treatment of Gonorrhea'
+   description": 'CDS for presumptive treatment of gonorrhea - Ceftriaxone dose check, chlamydia treatment, partner treatment, HIV screening'
+   hook": 'order-sign'
+   prefetch:
+     patient: 'Patient/{{context.patientId}}'

@@ -2,6 +2,7 @@ package io.elimu.kogito;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
@@ -25,6 +26,22 @@ public class ConfirmedGcTest {
     @ConfigProperty(name = "FHIR_TERMINOLOGY_SERVER_URL")
     String fhirTermUrl;
 
+    @Test
+    @TestSecurity(authorizationEnabled = false)
+    void testDiscovery() throws IOException, URISyntaxException, InterruptedException {
+    	Response response = given()
+    			.header("Content-type", "application/json")
+                .when().get("/cds-hooks")
+                .then()
+                .statusCode(200)
+                .extract()
+                .response();
+    	List<?> services = response.jsonPath().getList("services");
+    	assertNotNull(services);
+    	assertEquals(2, services.size());
+    	assertTrue(services.toString().contains("confirmed_gc_treatment"));
+    }
+    
     @Test
     @TestSecurity(authorizationEnabled = false)
     void testConfirmedGCCards() throws IOException, URISyntaxException, InterruptedException {
@@ -83,9 +100,9 @@ public class ConfirmedGcTest {
         Response response = given()
             .body(jsonBody)
             .header("Content-type", "application/json")
-            .when().post("/confirmed_gc_treatment")
+            .when().post("/cds-hooks/confirmed_gc_treatment")
             .then()
-            .statusCode(201)
+            .statusCode(200)
             .extract()
             .response();
         List<?> cards = response.jsonPath().getList("cards");
