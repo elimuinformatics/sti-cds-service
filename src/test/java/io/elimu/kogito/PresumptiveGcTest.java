@@ -3,6 +3,7 @@ package io.elimu.kogito;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -23,6 +24,22 @@ public class PresumptiveGcTest {
     @ConfigProperty(name = "FHIR_TERMINOLOGY_SERVER_URL")
     String fhirTermUrl;
 
+    @Test
+    @TestSecurity(authorizationEnabled = false)
+    void testDiscovery() throws IOException, URISyntaxException, InterruptedException {
+    	Response response = given()
+    			.header("Content-type", "application/json")
+                .when().get("/cds-hooks")
+                .then()
+                .statusCode(200)
+                .extract()
+                .response();
+    	List<?> services = response.jsonPath().getList("services");
+    	assertNotNull(services);
+    	assertEquals(2, services.size());
+    	assertTrue(services.toString().contains("presumptive_gc_treatment"));
+    }
+    
     @Test
     @TestSecurity(authorizationEnabled = false)
     void testPresumptiveGCCards() throws IOException, URISyntaxException, InterruptedException {
@@ -73,9 +90,9 @@ public class PresumptiveGcTest {
         Response response = given()
             .body(jsonBody)
             .header("Content-type", "application/json")
-            .when().post("/presumptive_gc_treatment")
+            .when().post("/cds-hooks/presumptive_gc_treatment")
             .then()
-            .statusCode(201)
+            .statusCode(200)
             .extract()
             .response();
         List<?> cards = response.jsonPath().getList("cards");
