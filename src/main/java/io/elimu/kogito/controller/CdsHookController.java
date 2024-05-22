@@ -85,7 +85,7 @@ public class CdsHookController {
     	log.info("Receiving request for process {}", processId);
     	ProcessInstance<? extends Model> pi = createProcess(processes.processById(processId), payload, headers);
     	Map<String, Object> variables = pi.variables().toMap();
-    	if (variables.containsKey("cards")) {
+    	if (variables.containsKey("cards") && variables.get("cards") != null) {
     		Map<String, Object> retval = Map.of("cards", variables.get("cards"));
     		String jsonRetval = new Gson().toJson(retval);
     		return Response.status(200).type(MediaType.APPLICATION_JSON).entity(jsonRetval).build();
@@ -95,7 +95,7 @@ public class CdsHookController {
     	}
     }catch (Exception t){
       t.printStackTrace();
-      List<Map<String, Object>> issue = List.of(Map.of("diagnostics", t.getMessage(), 
+      List<Map<String, Object>> issue = List.of(Map.of("diagnostics", String.valueOf(t.getMessage()), 
     		  "code", OperationOutcome.IssueType.EXCEPTION.toCode(),
     		  "severity", OperationOutcome.IssueSeverity.ERROR.toCode()));
       String json = createOperationOutcome(issue);
@@ -107,13 +107,19 @@ public class CdsHookController {
   private String createOperationOutcome(Object objIssue) {
 	  List<Map<String, Object>> issue = (List<Map<String, Object>>) objIssue;
 	  OperationOutcome outcome = new OperationOutcome();
-	  for (Map<String, Object> i : issue) {
-		  String code = (String) i.get("issue");
-		  String severity = (String) i.get("severity");
-		  String diagnostics = (String) i.get("diagnostics");
-		  outcome.addIssue().setCode(OperationOutcome.IssueType.fromCode(code)).
-	  		setSeverity(OperationOutcome.IssueSeverity.fromCode(severity)).
-	  		setDiagnostics(diagnostics);
+	  if (issue != null) {
+		  for (Map<String, Object> i : issue) {
+			  String code = (String) i.get("issue");
+			  String severity = (String) i.get("severity");
+			  String diagnostics = (String) i.get("diagnostics");
+			  outcome.addIssue().setCode(OperationOutcome.IssueType.fromCode(code)).
+		  		setSeverity(OperationOutcome.IssueSeverity.fromCode(severity)).
+		  		setDiagnostics(diagnostics);
+		  }
+	  } else {
+		  outcome.addIssue().setDiagnostics("Insufficient data from output").
+		  	setSeverity(OperationOutcome.IssueSeverity.ERROR).
+		  	setCode(OperationOutcome.IssueType.EXCEPTION);
 	  }
 	  return FhirContext.forR4Cached().newJsonParser().encodeResourceToString(outcome);
   }

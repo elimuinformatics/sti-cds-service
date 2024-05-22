@@ -69,8 +69,8 @@ discovery:
       patient: 'Patient/{{context.patientId}}'
   presumptive_gc_treatment:
    id: presumptive_gc_treatment,
-   title": 'CDS for Presumptive Treatment of Gonorrhea'
-   description": 'CDS for presumptive treatment of gonorrhea - Ceftriaxone dose check, chlamydia treatment, partner treatment, HIV screening'
-   hook": 'order-sign'
+   title: 'CDS for Presumptive Treatment of Gonorrhea'
+   description: 'CDS for presumptive treatment of gonorrhea - Ceftriaxone dose check, chlamydia treatment, partner treatment, HIV screening'
+   hook: 'order-sign'
    prefetch:
      patient: 'Patient/{{context.patientId}}'
