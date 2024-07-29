@@ -7,6 +7,6 @@
   "type": "searchset",
   "link": [ {
     "relation": "self",
-    "url": "https://fhir4-terminology-internal.elimuinformatics.com/fhir/Library?_elements=name%2Cversion&_format=json&name=FHIRHelpers"
+    "url": "https://term-fhir-server-test.com/baseR4/Library?_elements=name%2Cversion&_format=json&name=FHIRHelpers"
   } ]
 }

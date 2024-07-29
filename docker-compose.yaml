@@ -1,18 +1,11 @@
 services:
   sti-cds-service:
     container_name: sti-cds-service
-    image: 435911253355.dkr.ecr.us-west-2.amazonaws.com/sti-cds-service:2944156a6251185def2cedfe5c8c3e1ba39d5c06
     build:
       context: ./
     ports:
       - "8080:8080"
     environment:
-      ENVIRONMENT: dev
-      VALID_AUD_LIST: ""
-      VALID_ISS_LIST: ""
-      VALID_PRESET_KEYS_LIST: ""
-      VALID_JKU_LIST: ""
-      FHIR_TERMINOLOGY_SERVER_URL: https://fhir-terminology-sandbox-internal.elimuinformatics.com/baseR4
+      FHIR_TERMINOLOGY_SERVER_URL: https://fhir-test-terminology.com/baseR4
       HIV_FHIR_SERVER_FILTER: ""
-      KBASE_NAME: gc_sti_cdshoooks
 
