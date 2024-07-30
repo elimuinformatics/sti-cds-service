@@ -7,10 +7,10 @@
   "type": "searchset",
   "link": [ {
     "relation": "self",
-    "url": "https://fhir4-terminology-internal.elimuinformatics.com/fhir/Library?_elements=name%2Cversion&_format=json&name=SimpleGonorrheaCDS2"
+    "url": "https://term-fhir-server-test.com/baseR4/Library?_elements=name%2Cversion&_format=json&name=SimpleGonorrheaCDS2"
   } ],
   "entry": [ {
-    "fullUrl": "https://fhir4-terminology-internal.elimuinformatics.com/fhir/Library/12055",
+    "fullUrl": "https://term-fhir-server-test.com/baseR4/Library/12055",
     "resource": {
       "resourceType": "Library",
       "id": "12055",
