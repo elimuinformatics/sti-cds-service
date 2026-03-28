@@ -45,7 +45,7 @@ public class ConfirmedGcTest {
     void testDiscovery() throws IOException, URISyntaxException, InterruptedException {
     	Response response = given()
     			.header("Content-type", "application/json")
-                .when().get("/cds-hooks")
+                .when().get("/cds-services")
                 .then()
                 .statusCode(200)
                 .extract()
@@ -114,7 +114,7 @@ public class ConfirmedGcTest {
         Response response = given()
             .body(jsonBody)
             .header("Content-type", "application/json")
-            .when().post("/cds-hooks/confirmed_gc_treatment")
+            .when().post("/cds-services/confirmed_gc_treatment")
             .then()
             .statusCode(200)
             .extract()

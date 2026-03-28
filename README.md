@@ -32,7 +32,7 @@ docker build -t sti-cds-service .
 
 3. Modify the docker-compose.yml to make sure you initialize your environment variables correctly:
 
-    * *FHIR_TERMINOLOGY_SERVER_URL*: Points to the FHIR Server where the terminology services need to be created. The Bundle of data for said repo can be found at src/test/resources/terminology-bundle.json
+    * *FHIR_TERMINOLOGY_SERVER_URL*: Points to the FHIR Server where the terminology services need to be created. The Bundle of data for said repo can be found at src/test/resources/terminology-bundle.json.
 
     * *HIV_FHIR_SERVER_FILTER*: This property needs to be left blank. DRL rules in filter-cards.drl can be expanded to filter specific cards based on this value
 
@@ -43,4 +43,7 @@ To build the image with the new environment variables
 5. Run *docker-compose up*
 
 To start the instance
+
+### Notes:
+* For testing purposes, you may use the same FHIR server for terminology as you use for the clinical data.
 
