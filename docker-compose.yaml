@@ -6,6 +6,6 @@ services:
     ports:
       - "8080:8080"
     environment:
-      FHIR_TERMINOLOGY_SERVER_URL: https://fhir-test-terminology.com/baseR4
+      FHIR_TERMINOLOGY_SERVER_URL: http://localhost:8080/baseR4
       HIV_FHIR_SERVER_FILTER: ""
 

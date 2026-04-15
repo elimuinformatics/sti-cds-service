@@ -20,30 +20,52 @@ You will need to install the following:
   
 
 
-### Installing
+### Installing and building
 
 1. Clone the git repository
 
-2. Compile the projects
+2. Compile the project
 
 ```bash
 docker build -t sti-cds-service .
 ```
 
-3. Modify the docker-compose.yml to make sure you initialize your environment variables correctly:
+### To run the service with an independent FHIR server for data and terminology server
+
+1. Modify the docker-compose.yml to make sure you initialize your environment variables correctly:
 
     * *FHIR_TERMINOLOGY_SERVER_URL*: Points to the FHIR Server where the terminology services need to be created. The Bundle of data for said repo can be found at src/test/resources/terminology-bundle.json.
 
     * *HIV_FHIR_SERVER_FILTER*: This property needs to be left blank. DRL rules in filter-cards.drl can be expanded to filter specific cards based on this value
 
-4. Run *docker-compose build* 
+2. Run *docker-compose build* 
 
 To build the image with the new environment variables
 
-5. Run *docker-compose up*
+3. Run *docker-compose up*
 
-To start the instance
+4. Follow instructions in `ehr-config-details.md` to integrate the service with an EHR.
 
-### Notes:
-* For testing purposes, you may use the same FHIR server for terminology as you use for the clinical data.
+### To test the service with the built-in HAPI-FHIR server
+The built-in HAPI FHIR server will provide patient data and serve as the terminology server. This is useful for testing the service locally.
+The steps below will populate all the knowledge artifacts and valuesets in the FHIR server. They also will load test patient data in the FHIR server.
+Two requests demonstrate the service. 
 
+After, running the "Installing and building" steps, run these steps:
+
+1. Build the docker containers
+```bash
+docker compose -f docker-compose-localtest.yaml build
+```
+
+2. Start the containers
+```bash
+docker compose -f docker-compose-localtest.yaml up
+```
+3. Test the service.
+From `src/test/resources`:
+- In postman open the collection `GC Knowledge Artifacts.postman_collection.json`
+Run the collection. 
+
+Now open the postman collection `GC Testing.postman_collection.json`
+Run the collection. Inspect the output of the two requests "Call presumptive GC..." and "Call confirmed GC..." to see the CDS Hooks cards.
