@@ -101,16 +101,6 @@
     {
       "name": "Call confirmed GG - MaleUroTreated - Cef rec and PrEP cards",
       "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3MzhEQzNFMDM5N0Q2MjJDN0Y3RDcwNzcyMkE2OUYzRjQ5QTgzMkYiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJwempjUGdPWDFpTEg5OWNIY2lwcDhfU2FneTgifQ.eyJuYmYiOjE2NzUyNjcwODQsImV4cCI6MTcyMjQ5NTYwMCwiaWF0IjoxNjc1MjY3Mzg0LCJpc3MiOiJodHRwczovL3NhbmRib3guY2RzLWhvb2tzLm9yZyIsImF1ZCI6Imh0dHA6Ly9lbGltdS5pby9jZHMtc2VydmljZXMvY2RjLWdjLWNkcyIsImp0aSI6IjcxMWI4YjM4LTUxYzEtNGM4Ny05N2UxLWQ0NDgwM2E5YWVlYiIsInN1YiI6IiJ9.mSjKskmGgvmrd569QCrQHne3HVTFI3Uh42Pmiw_aOIwsOUtYqMU6YhPeLx4MAv-S7jZ2NTi4NRxx1F2u7Os6HkhBgoDcygs7-nVb10S1OJ0bA22drio79iCJ6fPG3MLdiYOYJddv6XCO-x6N4hLdgO2e24Y4banuqA4Uz1SDcDwSC05IEgHAJ6rSb30sTRTr6uLz8fye1brckA-ZE4pv1K6I0N5zegs6koyLbrXkQBrxGXSMdIH-_s5cqrNfiSjwZYnebGOXfoRn2QVMUXicAt-EWMwY2Fm4fPFHeFh8YdcAYUgMjlnL2_B4CQsHAKpvDNYiNcPWWbMvI0HYtjV6Wg",
-              "type": "string"
-            }
-          ]
-        },
         "method": "POST",
         "header": [],
         "body": {
@@ -145,16 +135,6 @@
     {
       "name": "Call presumptive GC - MaleUroTreated - Cef dose rec and PrEP cards",
       "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3MzhEQzNFMDM5N0Q2MjJDN0Y3RDcwNzcyMkE2OUYzRjQ5QTgzMkYiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJwempjUGdPWDFpTEg5OWNIY2lwcDhfU2FneTgifQ.eyJuYmYiOjE2NzUyNjcwODQsImV4cCI6MTcyMjQ5NTYwMCwiaWF0IjoxNjc1MjY3Mzg0LCJpc3MiOiJodHRwczovL3NhbmRib3guY2RzLWhvb2tzLm9yZyIsImF1ZCI6Imh0dHA6Ly9lbGltdS5pby9jZHMtc2VydmljZXMvY2RjLWdjLWNkcyIsImp0aSI6IjcxMWI4YjM4LTUxYzEtNGM4Ny05N2UxLWQ0NDgwM2E5YWVlYiIsInN1YiI6IiJ9.mSjKskmGgvmrd569QCrQHne3HVTFI3Uh42Pmiw_aOIwsOUtYqMU6YhPeLx4MAv-S7jZ2NTi4NRxx1F2u7Os6HkhBgoDcygs7-nVb10S1OJ0bA22drio79iCJ6fPG3MLdiYOYJddv6XCO-x6N4hLdgO2e24Y4banuqA4Uz1SDcDwSC05IEgHAJ6rSb30sTRTr6uLz8fye1brckA-ZE4pv1K6I0N5zegs6koyLbrXkQBrxGXSMdIH-_s5cqrNfiSjwZYnebGOXfoRn2QVMUXicAt-EWMwY2Fm4fPFHeFh8YdcAYUgMjlnL2_B4CQsHAKpvDNYiNcPWWbMvI0HYtjV6Wg",
-              "type": "string"
-            }
-          ]
-        },
         "method": "POST",
         "header": [],
         "body": {

@@ -32,7 +32,7 @@ docker build -t sti-cds-service .
 
 ### To run the service with an independent FHIR server for data and terminology server
 
-1. Modify the docker-compose.yml to make sure you initialize your environment variables correctly:
+1. Modify the docker-compose.yaml to make sure you initialize your environment variables correctly:
 
     * *FHIR_TERMINOLOGY_SERVER_URL*: Points to the FHIR Server where the terminology services need to be created. The Bundle of data for said repo can be found at src/test/resources/terminology-bundle.json.
 
@@ -51,7 +51,7 @@ The built-in HAPI FHIR server will provide patient data and serve as the termino
 The steps below will populate all the knowledge artifacts and valuesets in the FHIR server. They also will load test patient data in the FHIR server.
 Two requests demonstrate the service. 
 
-After, running the "Installing and building" steps, run these steps:
+After, running the "Installing and building" steps 1 and 2, run these steps:
 
 1. Build the docker containers
 ```bash

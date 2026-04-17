@@ -13,7 +13,7 @@ services:
       DB_PARAMS: ""
       DB_USER: "postgres"
       DB_PASSWORD: "postgres"
-      HAPI_FHIR_SERVER_ADDRESS: "http://hapi-fhir-r4:8085/baseR4"
+      HAPI_FHIR_SERVER_ADDRESS: "http://hapi-fhir-r4:8080/baseR4"
       JAVA_OPTS: "-Xmx4g"
       OAUTH_ENABLED: "false"
     ports:
