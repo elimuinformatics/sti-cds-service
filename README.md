@@ -51,7 +51,7 @@ The built-in HAPI FHIR server will provide patient data and serve as the termino
 The steps below will populate all the knowledge artifacts and valuesets in the FHIR server. They also will load test patient data in the FHIR server.
 Two requests demonstrate the service. 
 
-After, running the "Installing and building" steps 1 and 2, run these steps:
+After running the "Installing and building" steps 1 and 2, run these steps:
 
 1. Build the docker containers
 ```bash
