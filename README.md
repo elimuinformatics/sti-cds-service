@@ -24,7 +24,7 @@ You will need to install the following:
 
 1. Clone the git repository
 
-2. Compile the project
+2. Build the Docker image
 
 ```bash
 docker build -t sti-cds-service .
