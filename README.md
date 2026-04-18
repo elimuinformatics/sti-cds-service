@@ -46,10 +46,10 @@ To build the image with the new environment variables
 
 4. Follow instructions in `ehr-config-details.md` to integrate the service with an EHR.
 
-### To test the service with the built-in HAPI-FHIR server
-The built-in HAPI FHIR server will provide patient data and serve as the terminology server. This is useful for testing the service locally.
-The steps below will populate all the knowledge artifacts and valuesets in the FHIR server. They also will load test patient data in the FHIR server.
-Two requests demonstrate the service. 
+### To test the service with a local HAPI-FHIR container
+The local HAPI FHIR server started via `docker-compose-localtest.yaml` will provide patient data and serve as the terminology server. This is useful for testing the service locally.
+The steps below will populate all the knowledge artifacts and valuesets in the FHIR server. They will also load test patient data into the FHIR server.
+Two requests are included to demonstrate the service.
 
 After running the "Installing and building" steps 1 and 2, run these steps:
 
