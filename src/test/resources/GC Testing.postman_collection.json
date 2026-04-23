@@ -1,0 +1,294 @@
+{
+  "info": {
+    "_postman_id": "85f03267-fd61-4147-a7be-c21a3210ecab",
+    "name": "GC Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "157576",
+    "_collection_link": "https://go.postman.co/collection/157576-85f03267-fd61-4147-a7be-c21a3210ecab?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Medications",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"resourceType\": \"Bundle\",\r\n    \"type\": \"transaction\",\r\n    \"entry\": [\r\n        {\r\n            \"fullUrl\": \"urn:uuid:Medication/Ceftriaxone250\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Medication\",\r\n                \"id\": \"Ceftriaxone250\",\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://www.whocc.no/atc\",\r\n                            \"code\": \"J01DD04\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"2193\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"9449\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"203172\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"309092\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"cefTRIAXone (ROCEPHIN) injection 250 mg\"\r\n                },\r\n                \"ingredient\": [\r\n                    {\r\n                        \"itemCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://www.whocc.no/atc\",\r\n                                    \"code\": \"J01DD04\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"2193\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"9449\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"203172\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"309092\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"cefTRIAXone (ROCEPHIN) injection 250 mg\"\r\n                        },\r\n                        \"strength\": {\r\n                            \"numerator\": {\r\n                                \"value\": 250,\r\n                                \"unit\": \"mg\",\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"mg\"\r\n                            },\r\n                            \"denominator\": {\r\n                                \"value\": 250,\r\n                                \"unit\": \"mg\",\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"mg\"\r\n                            }\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"request\": {\r\n                \"method\": \"PUT\",\r\n                \"url\": \"Medication/Ceftriaxone250\"\r\n            }\r\n        },\r\n        {\r\n            \"fullUrl\": \"urn:uuid:Medication/Ceftriaxone500\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Medication\",\r\n                \"id\": \"Ceftriaxone500\",\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"2193\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"9449\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"203172\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"1665005\"\r\n                        },\r\n                        {\r\n                            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                            \"code\": \"1665008\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"cefTRIAXone (ROCEPHIN) INTRAMUSCULAR injection 500 mg\"\r\n                },\r\n                \"ingredient\": [\r\n                    {\r\n                        \"itemCodeableConcept\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"2193\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"9449\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"203172\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"1665005\"\r\n                                },\r\n                                {\r\n                                    \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\r\n                                    \"code\": \"1665008\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"cefTRIAXone (ROCEPHIN) INTRAMUSCULAR injection 500 mg\"\r\n                        },\r\n                        \"strength\": {\r\n                            \"numerator\": {\r\n                                \"value\": 500,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"mg\"\r\n                            },\r\n                            \"denominator\": {\r\n                                \"value\": 500,\r\n                                \"system\": \"http://unitsofmeasure.org\",\r\n                                \"code\": \"mg\"\r\n                            }\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"request\": {\r\n                \"method\": \"PUT\",\r\n                \"url\": \"Medication/Ceftriaxone500\"\r\n            }\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}",
+          "host": [
+            "{{baseurl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Test Patient Bundle-MaleUroTreated",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "const now = new Date();\r",
+              "const yesterday2PM = new Date(Date.UTC(\r",
+              "  now.getUTCFullYear(),\r",
+              "  now.getUTCMonth(),\r",
+              "  now.getUTCDate() - 1, // Subtract 1 for \"yesterday\"\r",
+              "  14, 0, 0, 0           // 2 PM is 14:00\r",
+              "));\r",
+              "\r",
+              "pm.variables.set(\"yesterday\", yesterday2PM.toISOString());\r",
+              "\r",
+              "console.log(yesterday2PM.toUTCString()); \r",
+              "// Example Output: \"Wed, 26 Mar 2026 14:00:00 GMT\"\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"resourceType\": \"Bundle\",\n    \"type\": \"transaction\",\n    \"entry\": [\n        {\n            \"fullUrl\": \"urn:uuid:demo:Patient/123\",\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"123\",\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"MR\",\n                                    \"display\": \"Medical Record Number\"\n                                }\n                            ],\n                            \"text\": \"Medical Record Number\"\n                        },\n                        \"system\": \"http://my.hospital.org\",\n                        \"value\": \"2023-08-25-0559\"\n                    }\n                ],\n                \"active\": true,\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"family\": \"Gonouro\",\n                        \"given\": [\n                            \"Treated\",\n                            \"I\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"800-960-9294\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"joseph.ross@example.com\"\n                    }\n                ],\n                \"gender\": \"male\",\n                \"birthDate\": \"2003-10-02\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"19 Church St\"\n                        ],\n                        \"city\": \"Tulsa\",\n                        \"state\": \"OK\",\n                        \"postalCode\": \"74108\",\n                        \"country\": \"USA\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"method\": \"PUT\",\n                \"url\": \"Patient/123\"\n            }\n        },\n        {\n            \"fullUrl\": \"urn:uuid:demo:Observation/weight123\",\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"status\": \"final\",\n                \"category\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                                \"code\": \"vital-signs\",\n                                \"display\": \"Vital Signs\"\n                            }\n                        ]\n                    }\n                ],\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"29463-7\",\n                            \"display\": \"Body Weight\"\n                        },\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"3141-9\",\n                            \"display\": \"Body weight Measured\"\n                        },\n                        {\n                            \"system\": \"http://snomed.info/sct\",\n                            \"code\": \"27113001\",\n                            \"display\": \"Body weight\"\n                        }\n                    ]\n                },\n                \"subject\": {\n                    \"reference\": \"urn:uuid:demo:Patient/123\"\n                },\n                \"issued\": \"{{yesterday}}\",\n                \"effectiveDateTime\": \"{{yesterday}}\",\n                \"valueQuantity\": {\n                    \"value\": 75,\n                    \"unit\": \"kg\",\n                    \"system\": \"http://unitsofmeasure.org\",\n                    \"code\": \"kg\"\n                }\n            },\n            \"request\": {\n                \"method\": \"PUT\",\n                \"url\": \"Observation/weight123\"\n            }\n        },\n        {\n            \"fullUrl\": \"urn:uuid:demo:MedicationRequest/ceftriax500\",\n            \"resource\": {\n                \"resourceType\": \"MedicationRequest\",\n                \"id\": \"ceftriax500\",\n                \"status\": \"active\",\n                \"intent\": \"order\",\n                \"category\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\n                                \"code\": \"outpatient\",\n                                \"display\": \"Outpatient\"\n                            }\n                        ],\n                        \"text\": \"Outpatient\"\n                    }\n                ],\n                \"medicationReference\": {\n                    \"reference\": \"Medication/Ceftriaxone500\",\n                    \"display\": \"cefTRIAXone (ROCEPHIN) injection\"\n                },\n                \"subject\": {\n                    \"reference\": \"urn:uuid:demo:Patient/123\",\n                    \"display\": \"Gonouro, Treated\"\n                },\n                \"authoredOn\": \"{{yesterday}}\",\n                \"requester\": {\n                    \"type\": \"Practitioner\",\n                    \"display\": \"Attending Physician Emergency, MD\"\n                },\n                \"courseOfTherapyType\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy\",\n                            \"code\": \"acute\",\n                            \"display\": \"Short course (acute) therapy\"\n                        }\n                    ],\n                    \"text\": \"Short course (acute) therapy\"\n                },\n                \"dosageInstruction\": [\n                    {\n                        \"text\": \"500 mg, Intramuscular, ONCE, On Wed 9/06/23 at 1315, For 1 dose\\nReconstitute 500 mg vial with 1 mL of 1% lidocaine for a final concentration of 350 mg/mL. Common Side Effects: Stomach upset, skin rash.\\nReason for Use (RFU): Sexually transmitted disease\",\n                        \"timing\": {\n                            \"repeat\": {\n                                \"boundsPeriod\": {\n                                    \"start\": \"{{yesterday}}\"\n                                },\n                                \"count\": 1\n                            },\n                            \"code\": {\n                                \"text\": \"once\"\n                            }\n                        },\n                        \"asNeededBoolean\": false,\n                        \"route\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://snomed.info/sct\",\n                                    \"code\": \"78421000\",\n                                    \"display\": \"Intramuscular route (qualifier value)\"\n                                },\n                                {\n                                    \"system\": \"urn:oid:1.2.840.114350.1.13.301.3.7.4.798268.7025\",\n                                    \"code\": \"6\",\n                                    \"display\": \"Intramuscular\"\n                                }\n                            ],\n                            \"text\": \"Intramuscular\"\n                        },\n                        \"doseAndRate\": [\n                            {\n                                \"type\": {\n                                    \"coding\": [\n                                        {\n                                            \"system\": \"http://epic.com/CodeSystem/dose-rate-type\",\n                                            \"code\": \"calculated\",\n                                            \"display\": \"calculated\"\n                                        }\n                                    ],\n                                    \"text\": \"calculated\"\n                                },\n                                \"doseQuantity\": {\n                                    \"value\": 500,\n                                    \"unit\": \"mg\",\n                                    \"system\": \"http://unitsofmeasure.org\",\n                                    \"code\": \"mg\"\n                                }\n                            },\n                            {\n                                \"type\": {\n                                    \"coding\": [\n                                        {\n                                            \"system\": \"http://epic.com/CodeSystem/dose-rate-type\",\n                                            \"code\": \"admin-amount\",\n                                            \"display\": \"admin-amount\"\n                                        }\n                                    ],\n                                    \"text\": \"admin-amount\"\n                                },\n                                \"doseQuantity\": {\n                                    \"value\": 1.43,\n                                    \"unit\": \"mL\",\n                                    \"system\": \"http://unitsofmeasure.org\",\n                                    \"code\": \"mL\"\n                                }\n                            },\n                            {\n                                \"type\": {\n                                    \"coding\": [\n                                        {\n                                            \"system\": \"http://epic.com/CodeSystem/dose-rate-type\",\n                                            \"code\": \"ordered\",\n                                            \"display\": \"ordered\"\n                                        }\n                                    ],\n                                    \"text\": \"ordered\"\n                                },\n                                \"doseQuantity\": {\n                                    \"value\": 500,\n                                    \"unit\": \"mg\",\n                                    \"system\": \"http://unitsofmeasure.org\",\n                                    \"code\": \"mg\"\n                                }\n                            }\n                        ]\n                    }\n                ]\n            },\n            \"request\": {\n                \"method\": \"PUT\",\n                \"url\": \"MedicationRequest/ceftriax500\"\n            }\n        },\n        {\n            \"fullUrl\": \"urn:uuid:demo:Specimen/urethspec\",\n            \"resource\": {\n                \"resourceType\": \"Specimen\",\n                \"id\": \"urethspec\",\n                \"type\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"urn:oid:1.2.840.114350.1.13.301.3.7.4.798268.300\",\n                            \"code\": \"407\",\n                            \"display\": \"Culture\"\n                        }\n                    ],\n                    \"text\": \"Culture\"\n                },\n                \"subject\": {\n                    \"reference\": \"urn:uuid:demo:Patient/123\",\n                    \"display\": \"Gonouro, Treated\"\n                },\n                \"receivedTime\": \"{{yesterday}}\",\n                \"collection\": {\n                    \"collectedDateTime\": \"{{yesterday}}\",\n                    \"method\": {\n                        \"text\": \"Collection\"\n                    },\n                    \"bodySite\": {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://snomed.info/sct\",\n                                \"code\": \"258570002\",\n                                \"display\": \"Genitourinary specimen (specimen)\"\n                            },\n                            {\n                                \"system\": \"urn:oid:1.2.840.114350.1.13.301.3.7.4.798268.325\",\n                                \"code\": \"983\",\n                                \"display\": \"Urethral for DNA probe\"\n                            }\n                        ],\n                        \"text\": \"Urethral for DNA probe\"\n                    }\n                }\n            },\n            \"request\": {\n                \"method\": \"PUT\",\n                \"url\": \"Specimen/urethspec\"\n            }\n        },\n        {\n            \"fullUrl\": \"urn:uuid:demo:Observation/gonoresult\",\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"id\": \"gonoresult\",\n                \"status\": \"final\",\n                \"category\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                                \"code\": \"laboratory\",\n                                \"display\": \"Laboratory\"\n                            }\n                        ],\n                        \"text\": \"Laboratory\"\n                    }\n                ],\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"5028-6\",\n                            \"display\": \"Neisseria gonorrhoeae rRNA [Presence] in Unspecified specimen by DNA probe\"\n                        }\n                    ],\n                    \"text\": \"Gonorrhea DNA Probe\"\n                },\n                \"subject\": {\n                    \"reference\": \"urn:uuid:demo:Patient/123\"\n                },\n                \"issued\": \"{{yesterday}}\",\n                \"effectiveDateTime\": \"{{yesterday}}\",\n                \"valueCodeableConcept\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://snomed.info/sct\",\n                            \"code\": \"10828004\"\n                        }\n                    ],\n                    \"text\": \"Positive\"\n                },\n                \"interpretation\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n                                \"code\": \"A\",\n                                \"display\": \"Abnormal\"\n                            }\n                        ],\n                        \"text\": \"Abnormal\"\n                    }\n                ],\n                \"specimen\": {\n                    \"reference\": \"urn:uuid:demo:Specimen/urethspec\",\n                    \"display\": \"Specimen 23Y-073MI0001\"\n                },\n                \"referenceRange\": [\n                    {\n                        \"text\": \"Negative\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"method\": \"PUT\",\n                \"url\": \"Observation/gonoresult\"\n            }\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}",
+          "host": [
+            "{{baseurl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Call discovery service",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{cdsurl}}",
+          "host": [
+            "{{cdsurl}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Call confirmed GG - MaleUroTreated - Cef rec and PrEP cards",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"hookInstance\": \"d1577c69-dfbe-44ad-ba6d-3e05e953b2ea\",\r\n    \"fhirServer\": \"{{ehrfhirserver}}\",\r\n    \"hook\": \"patient-view\",\r\n    \"fhirAuthorization\": {\r\n        \"access_token\": \"{{accesstoken}}\",\r\n        \"token_type\": \"Bearer\",\r\n        \"expires_in\": 300,\r\n        \"subject\": \"123\"\r\n    },\r\n    \"context\": {\r\n        \"userId\": \"Practitioner/example\",\r\n        \"patientId\": \"123\"\r\n    },\r\n    \"prefetch\": {}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{cdsurl}}/confirmed_gc_treatment",
+          "host": [
+            "{{cdsurl}}"
+          ],
+          "path": [
+            "confirmed_gc_treatment"
+          ],
+          "query": [
+            {
+              "key": "patient",
+              "value": "should-screen-ccs",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "Calling this service will display a recommendation for Ceftriaxone 500 mg and an HIV PrEP card"
+      },
+      "response": []
+    },
+    {
+      "name": "Call presumptive GC - MaleUroTreated - Cef dose rec and PrEP cards",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"hookInstance\": \"d1577c69-dfbe-44ad-ba6d-3e05e953b2ea\",\r\n    \"fhirServer\": \"{{ehrfhirserver}}\",\r\n    \"hook\": \"order-sign\",\r\n    \"fhirAuthorization\": {\r\n        \"access_token\": \"{{accesstoken}}\",\r\n        \"token_type\": \"Bearer\",\r\n        \"expires_in\": 300,\r\n        \"subject\": \"123\"\r\n    },\r\n    \"context\": {\r\n        \"userId\": \"Practitioner/example\",\r\n        \"patientId\": \"123\",\r\n        \"encounterId\": \"456\",\r\n        \"draftOrders\": {\r\n            \"resourceType\": \"Bundle\",\r\n            \"type\": \"collection\",\r\n            \"entry\": [\r\n                {   \r\n                    \"resource\": {\r\n                        \"resourceType\": \"MedicationRequest\",\r\n                        \"id\": \"medrx0325\",\r\n                        \"status\": \"draft\",\r\n                        \"intent\": \"order\",\r\n                        \"category\": [\r\n                            {\r\n                                \"coding\": [\r\n                                    {\r\n                                        \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n                                        \"code\": \"inpatient\",\r\n                                        \"display\": \"Inpatient\"\r\n                                    }\r\n                                ],\r\n                                \"text\": \"Inpatient\"\r\n                            }\r\n                        ],\r\n                        \"medicationReference\": {\r\n                            \"reference\": \"Medication/Ceftriaxone250\",\r\n                            \"display\": \"CEFTRIAXONE 250 MG SOLUTION FOR INJECTION\"\r\n                        },\r\n                        \"subject\": {\r\n                            \"reference\": \"Patient/123\"                        },\r\n                        \"encounter\": {\r\n                            \"reference\": \"Encounter/456\",\r\n                            \"display\": \"Office Visit\"\r\n                        },\r\n                        \"requester\": {\r\n                            \"type\": \"Practitioner\",\r\n                            \"display\": \"Physician Family Medicine, MD\"\r\n                        },\r\n                        \"recorder\": {\r\n                            \"type\": \"Practitioner\",\r\n                            \"display\": \"Physician Family Medicine, MD\"\r\n                        },\r\n                        \"dosageInstruction\": [\r\n                            {\r\n                                \"timing\": {\r\n                                    \"repeat\": {\r\n                                        \"boundsPeriod\": {\r\n                                            \"start\": \"{{yesterday}}\"\r\n                                        },\r\n                                        \"frequency\": 1,\r\n                                        \"period\": 1,\r\n                                        \"periodUnit\": \"d\"\r\n                                    },\r\n                                    \"code\": {\r\n                                        \"text\": \"Daily\"\r\n                                    }\r\n                                },\r\n                                \"route\": {\r\n                                    \"coding\": [\r\n                                        {\r\n                                            \"system\": \"http://snomed.info/sct\",\r\n                                            \"code\": \"78421000\",\r\n                                            \"display\": \"Intramuscular route (qualifier value)\"\r\n                                        }\r\n                                    ],\r\n                                    \"text\": \"Intramuscular\"\r\n                                },\r\n                                \"doseAndRate\": [\r\n                                    {\r\n                                        \"type\": {\r\n                                            \"coding\": [\r\n                                                {\r\n                                                    \"code\": \"calculated\"\r\n                                                }\r\n                                            ],\r\n                                            \"text\": \"calculated\"\r\n                                        },\r\n                                        \"doseQuantity\": {\r\n                                            \"value\": 250,\r\n                                            \"unit\": \"mg\",\r\n                                            \"system\": \"http://unitsofmeasure.org\",\r\n                                            \"code\": \"mg\"\r\n                                        }\r\n                                    },\r\n                                    {\r\n                                        \"type\": {\r\n                                            \"coding\": [\r\n                                                {\r\n                                                    \"system\": \"http://epic.com/CodeSystem/dose-rate-type\",\r\n                                                    \"code\": \"ordered\",\r\n                                                    \"display\": \"ordered\"\r\n                                                }\r\n                                            ],\r\n                                            \"text\": \"ordered\"\r\n                                        },\r\n                                        \"doseQuantity\": {\r\n                                            \"value\": 250,\r\n                                            \"unit\": \"mg\",\r\n                                            \"system\": \"http://unitsofmeasure.org\",\r\n                                            \"code\": \"mg\"\r\n                                        }\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        },\r\n        \"selections\": [\r\n            \"MedicationRequest/medrx0325\"\r\n        ]\r\n    },\r\n    \"prefetch\": {}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{cdsurl}}/presumptive_gc_treatment",
+          "host": [
+            "{{cdsurl}}"
+          ],
+          "path": [
+            "presumptive_gc_treatment"
+          ],
+          "query": [
+            {
+              "key": "patient",
+              "value": "should-screen-ccs",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "Calling this service will display a recommendation to change the dose to 500 mg and an HIV PrEP card"
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "{{scope}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{password}}",
+        "type": "string"
+      },
+      {
+        "key": "clientId",
+        "value": "{{clientid}}",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "{{authurl}}",
+        "type": "string"
+      },
+      {
+        "key": "refreshRequestParams",
+        "value": [],
+        "type": "any"
+      },
+      {
+        "key": "tokenRequestParams",
+        "value": [],
+        "type": "any"
+      },
+      {
+        "key": "authRequestParams",
+        "value": [],
+        "type": "any"
+      },
+      {
+        "key": "tokenName",
+        "value": "a",
+        "type": "string"
+      },
+      {
+        "key": "challengeAlgorithm",
+        "value": "S256",
+        "type": "string"
+      },
+      {
+        "key": "username",
+        "value": "{{username}}",
+        "type": "string"
+      },
+      {
+        "key": "state",
+        "value": "202006231343",
+        "type": "string"
+      },
+      {
+        "key": "redirect_uri",
+        "value": "{{callbackurl}}",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "password_credentials",
+        "type": "string"
+      },
+      {
+        "key": "addTokenTo",
+        "value": "header",
+        "type": "string"
+      },
+      {
+        "key": "client_authentication",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseurl",
+      "value": "http://localhost:8085/baseR4"
+    },
+    {
+      "key": "cdsurl",
+      "value": "http://localhost:8081/cds-services"
+    },
+    {
+      "key": "accesstoken",
+      "value": "blahblah"
+    },
+    {
+      "key": "yesterday",
+      "value": "2026-03-27T14:00:00Z"
+    },
+    {
+      "key": "ehrfhirserver",
+      "value": "http://hapi-fhir-r4:8080/baseR4"
+    }
+  ]
+}

@@ -53,7 +53,7 @@ import lombok.extern.slf4j.Slf4j;
 public class CdsHookController {
 
   public static final String X_CORRELATION_ID = "x-correlation-id";
-  public static final String BASE_URL = "/cds-hooks";
+  public static final String BASE_URL = "/cds-services";
 
   @Inject
   Processes processes;

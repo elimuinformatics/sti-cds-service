@@ -1,0 +1,59 @@
+services:
+  hapi-fhir-r4:
+    image: elimuinformatics/hapi:v7.6.1
+    networks:
+      - backend-network
+    container_name: hapi-fhir-r4
+    restart: always
+    environment:
+      SPRING_CONFIG_LOCATION: "application.yaml"
+      DB_HOST: "hapi-fhir-r4-postgres"
+      DB_PORT: "5432"
+      DB_NAME: "postgres"
+      DB_PARAMS: ""
+      DB_USER: "postgres"
+      DB_PASSWORD: "postgres"
+      HAPI_FHIR_SERVER_ADDRESS: "http://hapi-fhir-r4:8080/baseR4"
+      JAVA_OPTS: "-Xmx4g"
+      OAUTH_ENABLED: "false"
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./hapi-fhir/application.yaml:/app/application.yaml
+  hapi-fhir-r4-postgres:
+    image: postgres:15-alpine
+    container_name: hapi-fhir-r4-postgres
+    networks:
+      - backend-network
+    restart: always
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - hapi-fhir-r4-postgres:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 1.5G
+        reservations:
+          memory: 1G
+  sti-cds-service:
+    container_name: sti-cds-service
+    networks:
+      - backend-network
+    build:
+      context: ./
+    ports:
+      - "8081:8080"
+    environment:
+      FHIR_TERMINOLOGY_SERVER_URL: http://hapi-fhir-r4:8080/baseR4
+      HIV_FHIR_SERVER_FILTER: ""
+volumes:
+  hapi-fhir-r4-postgres:
+networks:
+  backend-network:
+    driver: bridge

@@ -1,4 +1,4 @@
-FROM maven:3.9.3-amazoncorretto-17 as build
+FROM maven:3.9.3-amazoncorretto-17 AS build
 WORKDIR /usr/sti-cds-service/
 
 COPY *.xml /usr/sti-cds-service/
